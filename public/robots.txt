@@ -1,0 +1,14 @@
+# robots.txt for https://arkaxus.com/
+# Allow search engines to crawl your entire website
+User-agent: *
+Allow: /
+
+# Block unnecessary or duplicate paths (optional but good for SEO)
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /assets/
+Disallow: /components/
+Disallow: /pages/
+
+# Sitemap location
+Sitemap: https://arkaxus.com/sitemap.xml

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home -->
+  <url>
+    <loc>https://arkaxus.com/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://arkaxus.com/about</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Services Overview -->
+  <url>
+    <loc>https://arkaxus.com/services</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Individual Service Pages -->
+  <url><loc>https://arkaxus.com/energy-audit</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://arkaxus.com/power-quality</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://arkaxus.com/harmonic-study</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://arkaxus.com/solar-panel-study</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://arkaxus.com/thermal-study</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://arkaxus.com/vibration-audit</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://arkaxus.com/industrial-safety-audit</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://arkaxus.com/industrial-training</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Snap Shots -->
+  <url>
+    <loc>https://arkaxus.com/snap-shot</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Instruments -->
+  <url>
+    <loc>https://arkaxus.com/instruments</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+</urlset>
