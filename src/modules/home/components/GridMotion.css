@@ -1,121 +1,11 @@
-/* Add this at the top of your CSS file */
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
-  
-  .intro {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .intro::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../../../assets/noise.png');
-    background-size: 250px;
-    pointer-events: none;
-    z-index: 4;
-  }
-  .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures video covers the entire background */
-    z-index: -1;
-  }
-  .gridMotion-container {
-    gap: 1rem;
-    flex: none;
-    position: relative;
-    width: 150vw;
-    height: 150vh;
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: 100%;
-    transform: rotate(-15deg);
-    transform-origin: center center;
-    z-index: 2;
-  }
-  
-  .row {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(7, 1fr);
-    will-change: transform, filter;
-  }
-  
-  .row__item {
-    position: relative;
-  }
-  
-  .row__item-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 10px;
-    background-color: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-  }
-  
-  .row__item-img {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: 50% 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .row__item-content {
-    padding: 1rem;
-    text-align: center;
-    z-index: 1;
-  }
-  
-  .fullview {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-  }
-  
-  .fullview .row__item-inner {
-    border-radius: 0px;
-  }
-  
-/* Animated Title Styles */
-
-:root {
-  --bar-scale-y: 0;
-  --sparkle-color: rgba(253, 244, 215, 0.4);
-}
 
 .animated-title {
   color: #e66a1c;
-  animation: shimmer 1s infinite alternate; /* added now */
+  animation: shimmer 1s infinite alternate;
   font-family: "Playfair Display", serif;
-  font-size: 8rem;
   line-height: 0.85;
   perspective: 500px;
-  margin-bottom: 1rem;
-  text-align: center;
 }
 
 .word {
@@ -128,84 +18,27 @@
 }
 
 .word:nth-of-type(2) {
-  padding-left: 2rem;
   animation-delay: 1.5s;
-  color: #23376c; /* #ffffff - white #23376c - blue */
-     /* text-shadow: 10px 10px 10px rgb(224, 214, 207); */
-}
-
-.hero-description {
-  font-size: 1.5rem;
-  color: white;
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0;
-  animation: show 0.01s 3s forwards;
+  color: #23376c; 
 }
 
 .eiei-text {
-
   color: #d2d3d5be;
-  font-weight: 200;
   animation: shimmer 2s infinite alternate;
-  letter-spacing: 1.2px;
   text-shadow: 0 0 4px rgba(255, 215, 0, 0.5);
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   transition: text-shadow 0.3s ease-in-out;
 }
 
-/* Animations */
+/* Keyframes */
 @keyframes pop-word {
-  to {
-    transform: rotateX(0);
-  }
+  to { transform: rotateX(0); }
 }
 
 @keyframes show {
-  to {
-    opacity: 1;
-  }
+  to { opacity: 1; }
 }
 
 @keyframes shimmer {
-  to {
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Changed rgba to white */
-  }
-}
-
-/* Responsive Adjustments */
-@media screen and (max-width: 768px) {
-  .animated-title {
-    font-size: 4rem;
-  }
-  
-  .hero-description {
-    font-size: 1.2rem;
-  }
-
-  .intro {
-    height: 50vh;
-  }
-
-  .eiei-text {
-    font-size: 25px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .animated-title {
-    font-size: 3rem;
-  }
-  
-  .word:nth-of-type(2) {
-    padding-left: 1rem;
-  }
-
-  .intro {
-    height: 30vh;
-  }
-
-  .eiei-text {
-    font-size: 13px;
-  }
+  to { text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); }
 }

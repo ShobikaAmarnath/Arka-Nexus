@@ -1,26 +1,54 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/prop-types */
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type JSX } from 'react';
 import { gsap } from 'gsap';
 import './GridMotion.css';
 import bgVideo from '@/assets/images/main_vdo.mp4';
-// import { ContainerTextFlip } from "../components/ui/container-text-flip";
 
-const GridMotion = ({
-  items = [],
-  gradientColor = 'rgba(238, 255, 0, 0.3)',
-  autoSpeed = 1,
-  heroTitle = "Arka Nexus",
-  // heroDescription = "Engineering Intelligence Empowering Industry"
-}) => {
+type Props = {
+  autoSpeed?: number;
+};
+
+const GRID_ITEMS: (string | JSX.Element)[] = [
+  'https://media.istockphoto.com/id/1390249924/photo/industrial-plant-for-the-production-of-sheet-metal-in-a-steel-mill-storage-of-sheet-rolls.jpg?s=1024x1024&w=is&k=20&c=hNYNzW3cJemADUDb8rmGhmpCT-E2bwtPyFS6eO9wT44=',
+  'https://plus.unsplash.com/premium_photo-1678889596384-6e317ec8bf97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://th.bing.com/th/id/OIP.l9MV3oQFW5yvSSWyGzbD4AHaDi?rs=1&pid=ImgDetMain',
+  'https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://media.istockphoto.com/id/173194744/photo/close-up-of-a-heartbeat-on-a-machine.jpg?s=1024x1024&w=is&k=20&c=_zsgrJzOq-kYstc3DlRWaU15ftpe9vAk6YjJA1d-uhI=',
+  'https://images.unsplash.com/photo-1643649819787-8433d30868ce?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://media.istockphoto.com/id/1337173750/photo/solar-and-wind-power.jpg?s=612x612&w=0&k=20&c=krNUQVFMq4DDPDvhKhW4SwL06NlmZ7dcHWWGDsxZzKI=',
+  'https://plus.unsplash.com/premium_photo-1678889596384-6e317ec8bf97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://plus.unsplash.com/premium_photo-1679917152396-4b18accacb9d?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://images.unsplash.com/photo-1643649819787-8433d30868ce?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://media.istockphoto.com/id/1135885965/photo/thermoscan-industrial-equipment-used-for-checking-the-internal-temperature-of-the-machine-for.jpg?s=1024x1024&w=is&k=20&c=-UNNRcvTu0zZ6dqkE31PrC32wqD-ZW9tY48XvDKN55Y=',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbp0Dxw3RTE6T4RMGdX3hX8ZmhDzCpTTJMJA&s',
+  'https://plus.unsplash.com/premium_photo-1679917152396-4b18accacb9d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c29sYXIlMjBwYW5lbHxlbnwwfHwwfHx8MA%3D%3D',
+  'https://plus.unsplash.com/premium_photo-1682144748274-add3d8ed04ea?q=80&w=2034&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://images.unsplash.com/photo-1690973692388-239878450c7b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://plus.unsplash.com/premium_photo-1661960643553-ccfbf7d921f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://plus.unsplash.com/premium_photo-1678889596384-6e317ec8bf97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://th.bing.com/th/id/OIP.l9MV3oQFW5yvSSWyGzbD4AHaDi?rs=1&pid=ImgDetMain',
+  'https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://media.istockphoto.com/id/173194744/photo/close-up-of-a-heartbeat-on-a-machine.jpg?s=1024x1024&w=is&k=20&c=_zsgrJzOq-kYstc3DlRWaU15ftpe9vAk6YjJA1d-uhI=',
+  'https://plus.unsplash.com/premium_photo-1678889596384-6e317ec8bf97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://plus.unsplash.com/premium_photo-1679917152396-4b18accacb9d?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://images.unsplash.com/photo-1643649819787-8433d30868ce?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://media.istockphoto.com/id/1135885965/photo/thermoscan-industrial-equipment-used-for-checking-the-internal-temperature-of-the-machine-for.jpg?s=1024x1024&w=is&k=20&c=-UNNRcvTu0zZ6dqkE31PrC32wqD-ZW9tY48XvDKN55Y=',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbp0Dxw3RTE6T4RMGdX3hX8ZmhDzCpTTJMJA&s',
+  'https://media.istockphoto.com/id/1337173750/photo/solar-and-wind-power.jpg?s=612x612&w=0&k=20&c=krNUQVFMq4DDPDvhKhW4SwL06NlmZ7dcHWWGDsxZzKI=',
+  'https://plus.unsplash.com/premium_photo-1678889596384-6e317ec8bf97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+];
+
+export default function GridMotion({ autoSpeed = 1.5 }: Props) {
+
+  const gradientColor = 'rgba(238, 255, 0, 0.3)';
+  const heroTitle = "Arka Nexus";
+
   const gridRef = useRef(null);
   const rowRefs = useRef<HTMLDivElement[]>([]);
   const autoAnimationsRef = useRef<(gsap.core.Tween | null)[]>([]);
 
-  // Ensure the grid has 28 items (4 rows x 7 columns) by default
   const totalItems = 28;
   const defaultItems = Array.from({ length: totalItems }, (_, index) => `Item ${index + 1}`);
-  const combinedItems = items.length > 0 ? items.slice(0, totalItems) : defaultItems;
+  const combinedItems = GRID_ITEMS.length > 0 ? GRID_ITEMS.slice(0, totalItems) : defaultItems;
 
   useEffect(() => {
     gsap.ticker.lagSmoothing(0);
@@ -72,97 +100,44 @@ const GridMotion = ({
   }, [autoSpeed]);
 
   return (
-    <div className="loading" ref={gridRef}>
-      <section
-        className="intro hero-section"
-      >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="background-video" >
+    <div className="relative w-full h-screen overflow-hidden flex items-center justify-center" ref={gridRef}>
+      <section className="relative w-full h-full flex items-center justify-center overflow-hidden">
+
+        {/* Background Video */}
+        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover z-[-1]">
           <source src={bgVideo} type="video/mp4" />
-          Your browser does not support the video tag.
         </video>
 
-        {/* Blue gradient overlay */}
-        <div className="gradient-overlay" style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '500%',
-          height: '100%',
-          background: `radial-gradient(circle, ${gradientColor} 0%, rgba(0,0,0,0.7) 100%)`,
-          zIndex: 1,
-        }}></div>
+        {/* Gradient Overlay - Pulls from gradientColor prop */}
+        <div
+          className="absolute inset-0 w-[500%] h-full z-[1]"
+          style={{ background: `radial-gradient(circle, ${gradientColor} 0%, rgba(0,0,0,0.7) 100%)` }}
+        />
 
         {/* Hero content */}
-        <div className="hero-content" style={{
-          position: 'absolute',
-          transform: 'translateX(-50%, -50%)',
-          color: 'white',
-          textAlign: 'center',
-          justifyContent: 'center',
-          zIndex: 3,
-          width: '80%',
-          maxWidth: '800px'
-        }}>
-          <h1 className="animated-title">
-            <span className="word">{heroTitle.split(' ')[0]}</span> {/* "Arka" */}
-            <span className="word">{heroTitle.split(' ')[1]}</span> {/* "Nexus" */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[3] w-4/5 max-w-[800px] text-center text-white">
+          <h1 className="animated-title text-[4rem] sm:text-[6rem] lg:text-[8rem] mb-4">
+            <span className="word">{heroTitle.split(' ')[0]}</span>
+            <span className="word pl-4 sm:pl-8">{heroTitle.split(' ')[1]}</span>
           </h1>
-          <div
-            style={{
-              fontSize: '2rem',
-              fontWeight: '500',
-              color: 'white',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            className="text-white font-bold"
-          >
-            {/* <span className="short-text">EIEI -</span> */}
-            <h5 className='eiei-text'>Engineering Intelligence Empowering Industry</h5>
-          </div>
-
-
+          <h5 className="eiei-text text-lg sm:text-2xl lg:text-[2rem] font-medium tracking-wider">
+            Engineering Intelligence Empowering Industry
+          </h5>
         </div>
 
         {/* Grid content - This will disappear after animation */}
-        <div className="gridMotion-container" style={{
-          position: 'relative',
-          zIndex: 2,
-          opacity: 1, // Initially visible
-        }}>
+        <div className="gridMotion-container relative z-[2] w-[150vw] h-[150vh] grid grid-rows-4 grid-cols-1 gap-4 opacity-100 rotate-[-15deg] origin-center">
           {[...Array(4)].map((_, rowIndex) => (
-            <div
-              key={rowIndex}
-              className="row"
-              ref={(el) => {
-                if (el) {
-                  rowRefs.current[rowIndex] = el;
-                }
-              }}
-            >
+            <div key={rowIndex} className="row grid grid-cols-7 gap-4 will-change-transform" ref={(el) => { if (el) rowRefs.current[rowIndex] = el; }}>
               {[...Array(7)].map((_, itemIndex) => {
                 const content = combinedItems[rowIndex * 7 + itemIndex];
                 return (
-                  <div key={itemIndex} className="row__item">
-                    <div className="row__item-inner" style={{
-                      backgroundColor: 'rgba(17, 17, 17, 0.6)',
-                      backdropFilter: 'blur(2px)'
-                    }}>
+                  <div key={itemIndex} className="relative">
+                    <div className="relative w-full h-full overflow-hidden rounded-[10px] bg-[#111]/60 backdrop-blur-[2px] flex items-center justify-center text-white text-2xl">
                       {typeof content === 'string' && content.startsWith('http') ? (
-                        <div
-                          className="row__item-img"
-                          style={{
-                            backgroundImage: `url(${content})`,
-                            opacity: 0.7,
-                          }}
-                        ></div>
+                        <div className="absolute inset-0 bg-cover bg-center opacity-70" style={{ backgroundImage: `url(${content})` }} />
                       ) : (
-                        <div className="row__item-content">{content}</div>
+                        <div className="p-4 text-center z-[1]">{content}</div>
                       )}
                     </div>
                   </div>
@@ -171,13 +146,9 @@ const GridMotion = ({
             </div>
           ))}
         </div>
-        {/* Hero Content - Replace your existing title with this */}
-
-
-        <div className="fullview"></div>
       </section>
     </div>
   );
 };
 
-export default GridMotion;
+
