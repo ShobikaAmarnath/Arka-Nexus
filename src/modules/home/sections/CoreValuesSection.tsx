@@ -21,7 +21,7 @@ export default function CoreValuesSection() {
                 transition={{ duration: 1 }}
             >
                 <h2 className="text-[2.5rem] font-bold text-brand-secondary">Our Core Values</h2>
-                <p className="text-[1.1rem] text-white mb-8">The principles that drive our success</p>
+                <p className="text-[1.1rem] text-neutral-white mb-8">The principles that drive our success</p>
                 <div className="flex items-center justify-center gap-4 mb-8">
                     <span className="w-2 h-2 bg-[#ffcc00] rounded-full"></span>
                     <span className="w-[60px] h-[2px] bg-[#d18c0d]"></span>

@@ -96,7 +96,7 @@ const ContactForm = ({ onSuccess }: Props) => {
             initial={{ opacity: 0, y: -20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="fixed top-10 left-1/2 -translate-x-1/2 z-[10000] flex items-center gap-3 bg-green-600 text-white px-6 py-3 rounded-full shadow-2xl border border-green-500"
+            className="fixed top-10 left-1/2 -translate-x-1/2 z-[10000] flex items-center gap-3 bg-green-600 text-neutral-white px-6 py-3 rounded-full shadow-2xl border border-green-500"
           >
             <div className="bg-white rounded-full p-1">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -115,7 +115,7 @@ const ContactForm = ({ onSuccess }: Props) => {
             initial={{ opacity: 0, y: -20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="fixed top-10 left-1/2 -translate-x-1/2 z-[10000] flex items-center gap-3 bg-red-600 text-white px-6 py-3 rounded-full shadow-2xl border border-red-500"
+            className="fixed top-10 left-1/2 -translate-x-1/2 z-[10000] flex items-center gap-3 bg-red-600 text-neutral-white px-6 py-3 rounded-full shadow-2xl border border-red-500"
           >
             <div className="bg-white rounded-full p-1">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -231,7 +231,7 @@ const ContactForm = ({ onSuccess }: Props) => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="mt-3 py-[9px] px-5 rounded-xl font-bold text-lg text-white tracking-tight transition-all duration-300
+          className="mt-3 py-[9px] px-5 rounded-xl font-bold text-lg text-neutral-white tracking-tight transition-all duration-300
                    bg-gradient-to-br from-[#f66d14] to-[#ff6900] shadow-md
                    hover:shadow-xl hover:-translate-y-1 active:translate-y-0
                    disabled:bg-slate-400 disabled:from-slate-400 disabled:to-slate-400 disabled:cursor-not-allowed disabled:animate-pulse disabled:shadow-none"

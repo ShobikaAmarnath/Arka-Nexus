@@ -1,0 +1,80 @@
+/* Animation for the moving fluid background */
+@keyframes fluid {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.fluid-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #001e3c, #000428, #0a2342, #00052b);
+  background-size: 400% 400%;
+  animation: fluid 15s ease infinite;
+  z-index: -2;
+}
+
+.overlay-pattern {
+  position: absolute;
+  inset: 0;
+  /* Layered radial gradients + SVG Dot Pattern */
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 217, 0, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 100, 255, 0.15) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3C/g%3E%3C/svg%3E");
+  z-index: -1;
+}
+
+/* Staggered Content Animation */
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Pulse Animation for Years Highlight */
+.years-highlight-legacy {
+  animation: pulse-years 3s infinite ease-out;
+  box-shadow: 0 4px 15px rgba(189, 132, 9, 0.3);
+}
+
+@keyframes pulse-years {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+/* Animation for team cards on scroll/mount */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(20px);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05) translateY(-5px);
+  }
+  70% {
+    transform: scale(0.9) translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.team-card-legacy {
+  animation: bounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+/* Custom scrollbar for descriptions if they overflow (optional) */
+.team-card-legacy p::-webkit-scrollbar {
+  width: 4px;
+}
+
+.team-card-legacy p::-webkit-scrollbar-thumb {
+  background: #e88011;
+  border-radius: 10px;
+}

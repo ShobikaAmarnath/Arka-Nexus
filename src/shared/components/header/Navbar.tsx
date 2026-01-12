@@ -33,10 +33,10 @@ const services = [
 ];
 
 const aboutItems = [
-  { title: 'Vision & Mission', link: '/about#vision' },
+  { title: 'Vision & Mission', link: '/about#vision-mission' },
   { title: 'Objectives', link: '/about#objectives' },
   { title: 'Our Team', link: '/about#team' },
-  { title: 'USPs', link: '/about#usps' },
+  { title: 'USPs', link: '/about#usp' },
   { title: 'Core Values', link: '/about#values' },
 ];
 
@@ -147,7 +147,7 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
                           <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-lg" />
                           <Link to={service.link} className="absolute inset-0 flex items-center justify-center 
                          opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                            <span className="text-white font-semibold text-sm px-4 py-2 bg-brand-secondary backdrop-blur-sm rounded-md">View Details</span>
+                            <span className="text-neutral-white font-semibold text-sm px-4 py-2 bg-brand-secondary backdrop-blur-sm rounded-md">View Details</span>
                           </Link>
                         </div>
                         <Link to={service.link} className="text-dropdown-link font-semibold text-neutral-textMain leading-tight transition-colors hover:text-brand-primary">
@@ -190,7 +190,7 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
             onClick={handleContactClick}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-br from-brand-primary to-brand-secondary text-white px-7 py-3 rounded-button font-semibold shadow-button text-sm"
+            className="bg-gradient-to-br from-brand-primary to-brand-secondary text-neutral-white px-7 py-3 rounded-button font-semibold shadow-button text-sm"
           >
             Contact Us
           </motion.button>
@@ -296,7 +296,7 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
               {/* 5. Contact Us Button */}
               <li className="mt-8">
                 <button
-                  className="w-full bg-gradient-to-br from-brand-primary to-brand-secondary text-white py-4 rounded-button font-semibold text-lg shadow-button hover:opacity-90 transition-all active:scale-95"
+                  className="w-full bg-gradient-to-br from-brand-primary to-brand-secondary text-neutral-white py-4 rounded-button font-semibold text-lg shadow-button hover:opacity-90 transition-all active:scale-95"
                   onClick={handleContactClick}
                 >
                   Contact Us

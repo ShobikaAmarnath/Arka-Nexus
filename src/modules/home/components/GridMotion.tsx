@@ -112,7 +112,7 @@ export default function GridMotion() {
         />
 
         {/* Hero content */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[3] w-4/5 max-w-[800px] text-center text-white">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[3] w-4/5 max-w-[800px] text-center text-neutral-white">
           <h1 className="animated-title text-[4rem] sm:text-[6rem] lg:text-[8rem] mb-4">
             <span className="word">{heroTitle.split(' ')[0]}</span>
             <span className="word pl-4 sm:pl-8">{heroTitle.split(' ')[1]}</span>
@@ -130,7 +130,7 @@ export default function GridMotion() {
                 const content = combinedItems[rowIndex * 7 + itemIndex];
                 return (
                   <div key={itemIndex} className="relative">
-                    <div className="relative w-full h-full overflow-hidden rounded-[10px] bg-[#111]/60 backdrop-blur-[2px] flex items-center justify-center text-white text-2xl">
+                    <div className="relative w-full h-full overflow-hidden rounded-[10px] bg-[#111]/60 backdrop-blur-[2px] flex items-center justify-center text-neutral-white text-2xl">
                       {typeof content === 'string' && content.startsWith('http') ? (
                         <div className="absolute inset-0 bg-cover bg-center opacity-70" style={{ backgroundImage: `url(${content})` }} />
                       ) : (

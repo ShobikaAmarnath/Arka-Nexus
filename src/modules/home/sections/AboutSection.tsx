@@ -77,14 +77,14 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1.5fr] max-w-[1300px] mx-auto mb-[60px] items-center gap-10">
           {/* Left Text Content */}
           <div className="space-y-4 text-justify font-semibold">
-            <motion.p className="text-xl lg:text-xl text-white border-l-4 border-brand-secondary pl-[15px] font-medium leading-relaxed"
+            <motion.p className="text-xl lg:text-xl text-neutral-white border-l-4 border-brand-secondary pl-[15px] font-medium leading-relaxed"
               initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.6 }}>
               <strong className="text-brand-secondary font-semibold">ARKA Nexus</strong>, founded in 2025 by experienced professionals, excels in industrial consultancy, technology solutions, and professional training.
             </motion.p>
-            <motion.p className="text-lg lg:text-lg text-white text-justify leading-relaxed" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.5, duration: 0.6 }}>
+            <motion.p className="text-lg lg:text-lg text-neutral-white text-justify leading-relaxed" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.5, duration: 0.6 }}>
               With a strong industry network built since 2010 through research, product/software development, and process optimization, we drive innovation, efficiency, and sustainable growth across industries.
             </motion.p>
-            <motion.p className="text-lg lg:text-lg text-white text-justify leading-relaxed" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.7, duration: 0.6 }}>
+            <motion.p className="text-lg lg:text-lg text-neutral-white text-justify leading-relaxed" initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.7, duration: 0.6 }}>
               Our expert consultants provide tailored solutions using cutting-edge technology and industry insights. We offer advanced training and support over 100 companies across India, helping them achieve efficiency and long-term success.
             </motion.p>
           </div>

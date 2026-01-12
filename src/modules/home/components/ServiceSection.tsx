@@ -83,7 +83,7 @@ export default function ServiceSection() {
                 <h2 className="text-4xl md:text-5xl font-bold text-brand-secondary mb-4">
                     Our Services
                 </h2>
-                <p className="text-white text-lg md:text-xl">
+                <p className="text-neutral-white text-lg md:text-xl">
                     Where expertise meets execution
                 </p>
                 <div className="w-24 h-1 bg-brand-secondary mx-auto mt-6 rounded-full" />
