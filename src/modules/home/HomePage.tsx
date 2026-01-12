@@ -2,6 +2,8 @@ import GridMotion from "./components/GridMotion";
 import AboutSection from "./sections/AboutSection";
 import CoreValuesSection from "./sections/CoreValuesSection";
 import ServiceSection from "./components/ServiceSection";
+import ClientsSection from "./sections/ClientsSection";
+import ContactSection from "./sections/ContactSection";
 
 export default function HomePage() {
   return (
@@ -10,7 +12,8 @@ export default function HomePage() {
       <AboutSection />
       <CoreValuesSection />
       <ServiceSection />
-      {/* other home sections will be added later */}
+      <ClientsSection />
+      <ContactSection />
     </div>
   );
 }

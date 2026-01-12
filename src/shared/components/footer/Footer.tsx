@@ -39,7 +39,7 @@ export default function Footer() {
             />
           </Link>
 
-          <p className="text-neutral-textMuted text-base leading-relaxed lg:text-center md:text-left mb-5">
+          <p className="text-neutral-textMuted text-lg leading-relaxed lg:text-center md:text-left mb-5">
             Engineering Intelligence Empowering Industry
           </p>
 
@@ -175,7 +175,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-neutral-border py-6 mt-10 bg-black/10">
-        <p className="text-center text-neutral-textMuted text-lg">
+        <p className="text-center text-neutral-textMuted text-base">
           © 2025 Arka Nexus. All rights reserved.
         </p>
       </div>

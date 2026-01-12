@@ -100,7 +100,7 @@ export default function ServiceSection() {
                         variants={cardVariants}
                         whileHover={{ y: -10 }}
                         transition={{ delay: index * 0.05 }}
-                        className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all"
+                        className="group bg-neutral-light rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all"
                     >
                         <Link to={service.link} className="block">
                             <div className="w-full h-24 sm:h-32 md:h-40 bg-gray-50 overflow-hidden">
@@ -111,11 +111,11 @@ export default function ServiceSection() {
                                 />
                             </div>
 
-                            <div className="p-3 text-center border-t border-gray-100">
+                            <div className="p-2 text-center border-t border-gray-100">
                                 <h3 className="text-dark font-bold text-xs sm:text-sm md:text-base leading-tight">
                                     {service.title}
                                 </h3>
-                                <div className="w-8 h-0.5 bg-text-secondary mx-auto mt-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <div className="w-8 h-0.5 bg-brand-secondary mx-auto mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                             </div>
                         </Link>
                     </motion.div>
