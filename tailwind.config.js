@@ -27,7 +27,13 @@ export default {
       },
       width: {
         'mega-menu-w': tokens.spacing['mega-menu-w'],
-      }
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px) scale(1.05)' },
+        },
+      },
     },
   },
   plugins: [],

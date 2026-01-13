@@ -93,7 +93,7 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
         <div className="hidden min-[1401px]:flex items-center gap-8">
           <ul className="flex items-center gap-dropdown-gap list-none m-0 p-0">
             <li>
-              <Link to="/" className={`flex items-center gap-2 px-4 py-3 rounded-nav-link text-nav-link transition-all
+              <Link to="/" className={`flex items-center gap-2 px-4 py-3 rounded-nav-link text-nav-link transition-all font-medium
                 ${location.pathname === '/'
                   ? 'text-brand-primary font-semibold'
                   : 'text-neutral-textMain hover:text-brand-primary'}`}>
@@ -224,22 +224,47 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
                 </Link>
               </li>
 
-              {/* 2. About Us - Clicking either text or icon toggles the menu */}
+              {/* 2. About Us - TEXT navigates, ICON toggles */}
               <li className="border-b border-neutral-border">
-                <button
-                  className="flex items-center justify-center w-full py-5 text-mobile-link font-medium text-neutral-textMain hover:text-brand-primary transition-colors relative"
-                  onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
-                >
-                  About Us
-                  <svg className={`transition-transform duration-300 absolute right-0 ${isAboutDropdownOpen ? 'rotate-180' : ''}`} width="16" height="16" viewBox="0 0 12 12">
-                    <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="2" fill="none" />
-                  </svg>
-                </button>
+                <div className="flex items-center justify-between w-full py-5 relative">
+                  <Link
+                    to="/about"
+                    className="flex-1 text-center pl-8 text-mobile-link font-medium text-neutral-textMain hover:text-brand-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    About Us
+                  </Link>
+                  <button
+                    className="p-1 hover:bg-neutral-light rounded-full transition-colors"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsAboutDropdownOpen(!isAboutDropdownOpen);
+                    }}
+                  >
+                    <svg
+                      className={`transition-transform duration-300 ${isAboutDropdownOpen ? 'rotate-180' : ''}`}
+                      width="16"
+                      height="16"
+                      viewBox="0 0 12 12"
+                    >
+                      <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="2" fill="none" />
+                    </svg>
+                  </button>
+                </div>
 
                 {/* About Dropdown Content */}
-                <div className={`overflow-hidden transition-all duration-300 bg-neutral-light/20 rounded-lg ${isAboutDropdownOpen ? 'max-h-96 opacity-100 my-2' : 'max-h-0 opacity-0'}`}>
+                <div
+                  className={`overflow-hidden transition-all duration-300 bg-neutral-light/20 rounded-lg ${
+                    isAboutDropdownOpen ? 'max-h-96 opacity-100 my-2' : 'max-h-0 opacity-0'
+                  }`}
+                >
                   {aboutItems.map((item, index) => (
-                    <HashLink key={index} to={item.link} onClick={() => setIsMobileMenuOpen(false)} className="block py-3 px-6 text-neutral-textMain hover:text-brand-primary text-center">
+                    <HashLink
+                      key={index}
+                      to={item.link}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block py-3 px-6 text-neutral-textMain hover:text-brand-primary text-center"
+                    >
                       {item.title}
                     </HashLink>
                   ))}

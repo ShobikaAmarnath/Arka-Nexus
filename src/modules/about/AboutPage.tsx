@@ -13,7 +13,7 @@ export default function AboutPage() {
       </div>
 
       {/* Main Content Container - Tailwind Centric */}
-      <main className="relative z-10 mx-auto max-w-[1400px] px-4 py-24 md:px-8 lg:py-32">
+      <main className="relative z-10 mx-auto max-w-arka p-6 mt-24 md:px-8 lg:py-8">
         <div className="flex flex-col gap-10 lg:gap-8">
           <AboutIntroSection />
           <AboutTabsSection />

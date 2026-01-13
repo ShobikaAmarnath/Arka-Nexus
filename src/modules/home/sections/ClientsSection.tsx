@@ -24,7 +24,7 @@ export default function ClientsSection() {
     if (!clientLogos) return null;
 
     return (
-        <section id="clients" className="clients-section-animated relative overflow-hidden py-12 md:py-16">
+        <section id="clients" className="clients-section-animated relative overflow-hidden py-12 md:py-16 scroll-mt-nav-h-scroll">
             {/* Paint spray texture overlay (Legacy CSS) */}
             <div className="legacy-texture-overlay" />
             <div style={{

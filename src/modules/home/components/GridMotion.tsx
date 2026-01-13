@@ -97,8 +97,8 @@ export default function GridMotion() {
   }, [autoSpeed]);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden flex items-center justify-center" ref={gridRef}>
-      <section className="relative w-full h-full flex items-center justify-center overflow-hidden">
+    <div className="relative w-full lg:h-[90vh] overflow-hidden flex items-center justify-center" ref={gridRef}>
+      <section className="relative w-full h-[40vh] md:h-[60vh] lg:h-[90vh] flex items-center justify-center overflow-hidden">
 
         {/* Background Video */}
         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover z-[-1]">

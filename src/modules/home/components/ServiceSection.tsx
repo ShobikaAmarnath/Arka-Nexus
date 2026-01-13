@@ -77,9 +77,9 @@ export default function ServiceSection() {
     };
 
     return (
-        <section className="py-20 px-4">
+        <section className="pb-20 px-4">
             {/* Section Header */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-8">
                 <h2 className="text-4xl md:text-5xl font-bold text-brand-secondary mb-4">
                     Our Services
                 </h2>
@@ -90,7 +90,7 @@ export default function ServiceSection() {
             </div>
 
             {/* Services Grid */}
-            <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className="lg:max-w-5xl md:max-w-4xl max-w-[25rem] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 {services.map((service, index) => (
                     <motion.div
                         key={service.id}

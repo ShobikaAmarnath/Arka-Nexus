@@ -5,6 +5,10 @@ import type { LeadershipTeamData } from "../../../core/services/sanity/leadershi
 export default function AboutTeamSection() {
 
     const [team, setTeam] = useState<LeadershipTeamData | null>(null);
+    const parts = team?.sectionIntro.split('*').map(p => p.trim()) ?? [];
+    const introText = parts[0];
+    const expertiseItems = parts.slice(1).filter(item => item !== "");
+    const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
     useEffect(() => {
         getLeadershipTeam()
@@ -12,31 +16,49 @@ export default function AboutTeamSection() {
             .catch(console.error);
     }, []);
 
+    const toggleReadMore = (index: number) => {
+        setExpandedCard(expandedCard === index ? null : index);
+    };
+
     if (!team) {
         return <p style={{ padding: 80, color: "#fff" }}>Loading...</p>;
     }
 
     return (
         <>
-            <section id="team" className="mt-1 px-2 sm:px-4 lg:px-6">
+            <section id="team" className="mt-1 scroll-mt-nav-h">
                 <div className="max-w-[1400px] mx-auto p-6 md:p-10 rounded-2xl border border-[#e88011]/20 bg-gradient-to-br from-white/5 to-white/[0.02]">
 
                     {/* Section Header */}
-                    <div className="text-center mb-12 max-w-2xl mx-auto">
+                    <div className="text-center mb-12 mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-br from-white to-[#e88011] bg-clip-text text-transparent">
                             {team.sectionTitle}
                         </h2>
-                        <p className="text-slate-100 text-base md:text-lg leading-relaxed">
-                            {team.sectionIntro}
+                        <p className="text-slate-100 text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+                            {introText}
                         </p>
+                        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-8">
+                        {expertiseItems.map((item, idx) => (
+                            <div 
+                                key={idx}
+                                className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-[#e88011]/30 text-slate-100 text-sm md:text-base whitespace-nowrap hover:bg-[#e88011]/10 hover:border-[#e88011]/60 transition-all duration-300 group"
+                            >
+                                {/* Glowing Dot Decoration */}
+                                <span className="w-2 h-2 rounded-full bg-[#e88011] shadow-[0_0_8px_#e88011] group-hover:scale-125 transition-transform" />
+                                {item}
+                            </div>
+                        ))}
+                    </div>
                     </div>
 
                     {/* Team Grid */}
-                    <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-16">
-                        {team.members?.map((member, index) => (
+                    <div className="flex flex-wrap justify-center gap-8 md:gap-12 mb-16 max-w-6xl mx-auto">
+                        {team.members?.map((member, index) => {
+                        const isExpanded = expandedCard === index;
+                        return (
                             <div
                                 key={index}
-                                className="team-card-legacy relative w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2.5rem)] max-w-sm bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 text-center transition-all duration-400 border-2 border-[#e88011]/20 shadow-lg hover:-translate-y-2 hover:shadow-2xl hover:border-[#e88011]/40 overflow-hidden group
+                                className="team-card-legacy relative flex-1 min-w-[320px] max-w-[420px] bg-gradient-to-br from-white to-slate-50 rounded-2xl p-8 text-center transition-all duration-400 border-2 border-[#e88011]/20 shadow-lg hover:-translate-y-2 hover:shadow-2xl hover:border-[#e88011]/40 overflow-hidden group
                                     before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:h-1 before:bg-gradient-to-r before:from-[#e88011] before:to-blue-500"
                                 style={{ animationDelay: `${index * 100}ms` }}
                             >
@@ -60,22 +82,36 @@ export default function AboutTeamSection() {
                                     <h4 className="text-sm font-semibold text-[#e88011] uppercase tracking-widest">
                                         {member.role}
                                     </h4>
-                                    <p className="text-slate-600 text-sm leading-relaxed text-justify pt-4">
-                                        {member.description}
-                                    </p>
+                                    {/* Description with Toggle */}
+                                    <div className="pt-4">
+                                        <p className={`text-slate-600 text-sm leading-relaxed text-justify transition-all duration-300 ${isExpanded ? '' : 'line-clamp-6'}`}>
+                                            {member.description}
+                                        </p>
+                                        
+                                        {/* Read More / Less Button */}
+                                        <button 
+                                            onClick={() => toggleReadMore(index)}
+                                            className="mt-2 text-[#e88011] text-xs font-bold uppercase tracking-tighter hover:underline focus:outline-none"
+                                        >
+                                            {isExpanded ? 'Read Less' : 'Read More'}
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        ))}
+                        )})}
                     </div>
 
                     {/* Stats Section */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-8 md:p-12 rounded-xl border border-[#e88011]/30 bg-white/10 backdrop-blur-sm">
+                    <div className="flex flex-wrap justify-center gap-y-8 gap-x-4 md:gap-12 p-3 md:px-8 rounded-xl border border-[#e88011]/30 bg-white/10 backdrop-blur-sm w-fit mx-auto">
                         {team.stats?.map((stat, i) => (
-                            <div key={i} className="text-center space-y-2">
-                                <div className="text-3xl md:text-4xl font-extrabold bg-gradient-to-br from-[#e88011] to-blue-500 bg-clip-text text-transparent">
+                            <div 
+                                key={i} 
+                                className="text-center space-y-2 w-[calc(50%-1rem)] md:w-auto md:min-w-[160px] max-w-[280px] flex flex-col justify-center"
+                            >
+                                <div className="text-2xl md:text-3xl font-extrabold bg-gradient-to-br from-[#e88011] to-blue-500 bg-clip-text text-transparent drop-shadow-sm">
                                     {stat.number}
                                 </div>
-                                <div className="text-white text-sm md:text-base font-medium opacity-90">
+                                <div className="text-neutral-white text-sm md:text-base font-medium opacity-90 leading-tight tracking-wide">
                                     {stat.label}
                                 </div>
                             </div>
