@@ -3,7 +3,7 @@ export const SERVICES_MAP = {
   areas: [
     {
       id: "energy-audit",
-      href: "/energy-audit",
+      href: "/services/energy-audit",
       title: "Energy Audit",
       shape: "poly",
       coords: [
@@ -15,7 +15,7 @@ export const SERVICES_MAP = {
     },
     {
       id: "thermal-study",
-      href: "/thermal-study",
+      href: "/services/thermal-study",
       title: "Thermal Study",
       shape: "poly",
       coords: [
@@ -27,7 +27,7 @@ export const SERVICES_MAP = {
     },
     {
       id: "solar-audit",
-      href: "/solar-panel-study",
+      href: "/services/solar-panel-study",
       title: "Solar Plant Audit",
       shape: "poly",
       coords: [
@@ -39,7 +39,7 @@ export const SERVICES_MAP = {
     },
     {
       id: "safety-audit",
-      href: "/industrial-safety-audit",
+      href: "/services/industrial-safety-audit",
       title: "Industrail Safety Audit",
       shape: "poly",
       coords: [
@@ -51,7 +51,7 @@ export const SERVICES_MAP = {
     },
     {
       id: "training",
-      href: "/industrial-training",
+      href: "/services/industrial-training",
       title: "Industrail Training Program",
       shape: "poly",
       coords: [
@@ -63,7 +63,7 @@ export const SERVICES_MAP = {
     },
     {
       id: "vibration-audit",
-      href: "/vibration-audit",
+      href: "/services/vibration-audit",
       title: "Vibration Audit",
       shape: "poly",
       coords: [
@@ -75,7 +75,7 @@ export const SERVICES_MAP = {
     },
     {
       id: "power-quality",
-      href: "/power-quality",
+      href: "/services/power-quality",
       title: "Power Quality Audit",
       shape: "poly",
       coords: [
@@ -87,7 +87,7 @@ export const SERVICES_MAP = {
     },
     {
       id: "harmonic-audit",
-      href: "/harmonic-study",
+      href: "/services/harmonic-study",
       title: "Harmonic Audit",
       shape: "poly",
       coords: [

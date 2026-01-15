@@ -22,14 +22,14 @@ const serviceImages: Record<string, string> = {
 };
 
 const services = [
-  { title: 'Energy Audit', link: '/energy-audit', image: serviceImages['energy-audit'] },
-  { title: 'Power Quality Audit', link: '/power-quality', image: serviceImages['power-quality'] },
-  { title: 'Harmonic Audit', link: '/harmonic-study', image: serviceImages['harmonic-study'] },
-  { title: 'Solar Plant Audit', link: '/solar-panel-study', image: serviceImages['solar-panel-study'] },
-  { title: 'Thermal Study', link: '/thermal-study', image: serviceImages['thermal-study'] },
-  { title: 'Vibration Audit', link: '/vibration-audit', image: serviceImages['vibration-audit'] },
-  { title: 'Industrial Safety Audit', link: '/industrial-safety-audit', image: serviceImages['safety-audit'] },
-  { title: 'Industrial Training Program', link: '/industrial-training', image: serviceImages['training'] }
+  { title: 'Energy Audit', link: '/services/energy-audit', image: serviceImages['energy-audit'] },
+  { title: 'Power Quality Audit', link: '/services/power-quality', image: serviceImages['power-quality'] },
+  { title: 'Harmonic Audit', link: '/services/harmonic-study', image: serviceImages['harmonic-study'] },
+  { title: 'Solar Plant Audit', link: '/services/solar-panel-study', image: serviceImages['solar-panel-study'] },
+  { title: 'Thermal Study', link: '/services/thermal-study', image: serviceImages['thermal-study'] },
+  { title: 'Vibration Audit', link: '/services/vibration-audit', image: serviceImages['vibration-audit'] },
+  { title: 'Industrial Safety Audit', link: '/services/industrial-safety-audit', image: serviceImages['safety-audit'] },
+  { title: 'Industrial Training Program', link: '/services/industrial-training', image: serviceImages['training'] }
 ];
 
 const aboutItems = [

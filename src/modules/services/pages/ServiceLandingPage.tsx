@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import ImageMapper from "react-img-mapper";
 import { useState, useEffect } from "react";
 
-import ServiceSection from "../home/components/ServiceSection";
+import ServiceSection from "../../home/components/ServiceSection";
 import arrow from "@/assets/images/services/arrow.png";
 import img from "@/assets/images/logos/service_img.png";
-import { SERVICES_MAP as MAP } from "./config/services.map";
+import { SERVICES_MAP as MAP } from "../config/services.map";
 
 const fadeSlide = {
   hidden: { opacity: 0, x: -30 },
