@@ -179,7 +179,7 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
             </li> */}
 
             <li className="relative group">
-              <Link to="/snap-shot" className="flex items-center gap-2 px-4 py-3 text-neutral-textMain text-nav-link group-hover:text-brand-primary transition-all font-medium">
+              <Link to="/snapshots" className="flex items-center gap-2 px-4 py-3 text-neutral-textMain text-nav-link group-hover:text-brand-primary transition-all font-medium">
                 Snap Shots
               </Link>
             </li>
@@ -313,7 +313,7 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
                 </HashLink>
               </li>
               <li className="border-b border-neutral-border">
-                <Link to="/snap-shot" onClick={() => setIsMobileMenuOpen(false)} className="block py-5 text-mobile-link font-medium text-neutral-textMain text-center hover:text-brand-primary">
+                <Link to="//snapshots" onClick={() => setIsMobileMenuOpen(false)} className="block py-5 text-mobile-link font-medium text-neutral-textMain text-center hover:text-brand-primary">
                   Snap Shots
                 </Link>
               </li>

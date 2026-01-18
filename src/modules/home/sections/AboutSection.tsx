@@ -74,7 +74,7 @@ export default function AboutSection() {
         </div>
 
         {/* Main content container with text and video */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] lg:grid-cols-[2fr_1.5fr] max-w-arka mx-auto mb-[60px] items-center gap-1 px-safe-x my-section-y">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] lg:grid-cols-[2fr_1.5fr] max-w-arka mx-auto mb-8 items-center gap-8 lg:gap-1 sm:px-0.5 lg:px-safe-x my-section-y">
           {/* Left Text Content */}
           <div className="space-y-4 text-justify font-semibold">
             <motion.p className="text-xl lg:text-xl text-neutral-white border-l-4 border-brand-secondary pl-[15px] font-medium leading-relaxed"
@@ -90,7 +90,7 @@ export default function AboutSection() {
           </div>
 
           {/* Right Video */}
-          <div className="relative flex justify-end items-center">
+          <div className="relative flex justify-center lg:justify-end items-center">
             <motion.div className="relative w-4/5 group" initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} whileHover={{ scale: 1.03 }}>
               <video src={sampleVideo} autoPlay muted loop playsInline className="w-full rounded-card shadow-card border-3 border-brand-secondary/30 transition-all duration-300" />
               <div className="absolute bottom-5 right-5 lg:right-[10px] bg-brand-secondary text-brand-primary-blue my-section-y px-4 rounded-full font-semibold text-[0.6rem] shadow-lg">
@@ -101,7 +101,7 @@ export default function AboutSection() {
         </div>
 
         {/* Mission and Vision Container */}
-        <section ref={sectionRef} className="max-w-arka mx-auto my-section-y px-safe-x">
+        <section ref={sectionRef} className="max-w-arka mx-auto my-section-y lg:gap-1 lg:px-safe-x sm:px-0.5">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-start">
 
             {/* Vision Card */}

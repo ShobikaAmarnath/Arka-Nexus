@@ -13,7 +13,7 @@ export default function CoreValuesSection() {
     }, []);
 
     return (
-        <section className="pt-8 pb-20 overflow-hidden relative text-center">
+        <section className="py-section-y overflow-hidden relative text-center">
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

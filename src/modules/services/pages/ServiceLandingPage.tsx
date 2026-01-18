@@ -60,7 +60,7 @@ function ServiceDetails() {
   return (
     <div className="w-full overflow-x-hidden scroll-mt-nav-h">
       {/* First Container: Flex Wrapper */}
-      <div className="flex flex-col lg:flex-row items-center justify-center mt-24 lg:mt-nav-h p-8 lg:pl-12 w-full gap-5">
+      <div className="flex flex-col lg:flex-row items-center justify-center mt-24 lg:mt-nav-h lg:px-safe-x sm:px-0.5 lg:pl-12 w-full gap-5">
         
         {/* Image Section */}
         <div className="flex flex-col items-center max-w-full order-1 lg:order-none">

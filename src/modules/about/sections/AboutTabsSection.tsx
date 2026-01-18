@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type SetStateAction } from "react";
 import { ChevronRight, Target, Award, Users, Heart } from 'lucide-react';
 import { useLocation } from "react-router-dom";
-import '../AboutPage.css';
+import '../pages/AboutPage.css';
 
 export default function AboutTabsSection() {
     const location = useLocation();

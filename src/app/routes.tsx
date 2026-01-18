@@ -1,10 +1,11 @@
 import type { RouteObject } from "react-router-dom";
 import MainLayout from "../shared/layout/MainLayout";
-import HomePage from "../modules/home/HomePage";
-import AboutPage from "../modules/about/AboutPage";
+import HomePage from "../modules/home/pages/HomePage";
+import AboutPage from "../modules/about/pages/AboutPage";
 import ServicesLandingPage from "../modules/services/pages/ServiceLandingPage";
 import ServicesPage from "../modules/services/pages/ServicePage";
 import InstrumentsPage from "../modules/instruments/pages/InstrumentsPage";
+import SnapshotsPage from "../modules/snapshots/pages/SnapshotsPage";
 
 export const routes: RouteObject[] = [
     {
@@ -57,4 +58,14 @@ export const routes: RouteObject[] = [
             },
         ],
     },
+    {
+        path: "/snapshots",
+        element: <MainLayout />,
+        children: [
+            {
+                index: true,
+                element: <SnapshotsPage />,
+            },
+        ],
+    }
 ];

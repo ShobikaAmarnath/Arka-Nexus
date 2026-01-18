@@ -1,7 +1,7 @@
 import "./AboutPage.css";
-import AboutIntroSection from "./sections/AboutIntroSection";
-import AboutTabsSection from "./sections/AboutTabsSection";
-import AboutTeamSection from "./sections/AboutTeamsSection";
+import AboutIntroSection from "../sections/AboutIntroSection";
+import AboutTabsSection from "../sections/AboutTabsSection";
+import AboutTeamSection from "../sections/AboutTeamsSection";
 
 export default function AboutPage() {
   return (
