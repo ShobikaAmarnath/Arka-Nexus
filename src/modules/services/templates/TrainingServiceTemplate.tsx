@@ -12,6 +12,7 @@ type Props = {
     needs?: string[];
     objectives?: string[];
     stages?: string[];
+    quote?: string;
   };
 };
 
@@ -24,48 +25,85 @@ const fadeUp = {
   }),
 };
 
-const HeroSection = ({ title, description, variant }: { title: string, description: string, variant?: string }) => (
-  <section className="relative min-h-[500px] flex items-center overflow-hidden pt-20">
-    {/* Geometric Background Shapes */}
-    <div className="absolute inset-0 opacity-10 pointer-events-none">
-      <div className="absolute top-[10%] left-[10%] w-72 h-72 bg-white/10 rounded-full animate-pulse" />
-      <div className="absolute bottom-[20%] right-[15%] w-56 h-56 bg-white/5 rounded-full animate-bounce" style={{ animationDuration: '6s' }} />
+const HeroSection = ({ title, description, intro, variant }: { title: string, description?: string, intro?: string, variant?: string }) => (
+  <section className="relative min-h-[650px] flex items-center overflow-hidden pt-24 pb-16">
+    {/* Background Tech Layer with Deep Glows */}
+    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-50"></div>
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#e66a1c]/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[120px]" />
     </div>
 
-    <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
-      <div className="text-center lg:text-left space-y-6">
-        <motion.h1 
-          variants={fadeUp} initial="hidden" animate="visible" custom={0.1}
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#e66a1c] leading-tight"
-        >
-          {title}
-        </motion.h1>
-        <motion.p 
-          variants={fadeUp} initial="hidden" animate="visible" custom={0.3}
-          className="text-slate-200 text-base md:text-lg leading-relaxed text-justify max-w-2xl mx-auto lg:mx-0"
-        >
-          {description}
-        </motion.p>
-      </div>
-
-      <motion.div 
-        initial={{ scale: 0.8, opacity: 0 }} 
-        animate={{ scale: 1, opacity: 1 }} 
-        transition={{ duration: 1 }}
-        className="relative flex items-center justify-center h-64"
-      >
-        {/* Pulse Rings */}
-        <div className="absolute w-48 h-48 border-2 border-[#e66a1c]/30 rounded-full animate-ping" />
-        <div className="absolute w-64 h-64 border border-[#e66a1c]/10 rounded-full animate-ping" style={{ animationDelay: '1s' }} />
+    <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         
-        {variant === "shield" ? (
-          <Shield className="w-32 h-32 text-white drop-shadow-[0_0_20px_rgba(230,106,28,0.4)]" />
-        ) : (
-          <div className="bg-[#e66a1c]/20 p-8 rounded-full">
-            <GraduationCap className="w-24 h-24 text-[#e66a1c]" />
-          </div>
-        )}
-      </motion.div>
+        <div className="lg:col-span-7 space-y-8">
+          <motion.div
+            variants={fadeUp} initial="hidden" animate="visible" custom={0.1}
+            className="inline-block px-4 py-1 rounded-md bg-[#e66a1c]/10 border border-[#e66a1c]/30"
+          >
+            <span className="text-[#e66a1c] text-[10px] font-bold uppercase tracking-[0.2em]">
+                Technical Excellence
+            </span>
+          </motion.div>
+          
+          <motion.h1 
+            variants={fadeUp} initial="hidden" animate="visible" custom={0.2}
+            className="text-3xl md:text-5xl font-black text-brand-primary leading-[1.05]"
+          >
+            {title}
+          </motion.h1>
+
+          {/* Vertical Accent Bar grounding the long description */}
+          <motion.div 
+            variants={fadeUp} initial="hidden" animate="visible" custom={0.4}
+            className="relative pl-8 border-l-2 border-[#e66a1c]/40 group"
+          >
+            {/* Interactive Corner Decor */}
+            <div className="absolute -left-[2px] top-0 w-[2px] h-12 bg-[#e66a1c] shadow-[0_0_15px_#e66a1c]" />
+            
+            <p className="text-slate-300 text-h3 md:text-body leading-relaxed text-justify max-w-2xl opacity-90">
+              {description}
+            </p>
+
+            <p className="text-slate-300 text-h3 md:text-body leading-relaxed text-justify max-w-3xl opacity-90">
+              {intro}
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Orbital Visual Side */}
+        <div className="lg:col-span-5 relative flex justify-center items-center h-full pt-12 lg:pt-24">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="relative w-full max-w-[400px] aspect-square"
+          >
+            {/* Nested Orbital Tech Rings */}
+            <div className="absolute inset-0 border border-slate-800 rounded-full animate-[spin_30s_linear_infinite]" />
+            <div className="absolute inset-8 border border-dashed border-slate-700/50 rounded-full animate-[spin_20s_linear_infinite_reverse]" />
+            
+            {/* The Main Icon Card */}
+            <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative p-12 rounded-[2.5rem] bg-gradient-to-br from-white/10 to-transparent backdrop-blur-xl border border-white/10 shadow-2xl">
+                    {/* Pulsing Light behind Icon */}
+                    <div className="absolute inset-0 bg-[#e66a1c]/10 blur-2xl rounded-full animate-pulse" />
+                    
+                    {variant === "shield" ? (
+                      <Shield size={100} className="relative z-10 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" />
+                    ) : (
+                      <GraduationCap size={100} className="relative z-10 text-[#e66a1c] drop-shadow-[0_0_15px_rgba(230,106,28,0.3)]" />
+                    )}
+                </div>
+            </div>
+
+            {/* Tech Node Decorations */}
+            <div className="absolute top-10 right-10 w-2 h-2 bg-[#e66a1c] rounded-full animate-ping" />
+            <div className="absolute bottom-20 left-4 w-1.5 h-1.5 bg-blue-500 rounded-full opacity-50" />
+          </motion.div>
+        </div>
+      </div>
     </div>
   </section>
 );
@@ -108,24 +146,24 @@ const InfoBlock = ({ title, items, isNumbered = false }: { title: string; items?
 
 const TrainingServiceTemplate = ({ data }: Props) => {
   return (
-    <div className="min-h-screen text-white selection:bg-[#e66a1c]/30 selection:text-[#e66a1c]">
+    <div className="min-h-screen text-white selection:bg-[#e66a1c]/30 selection:text-[#e66a1c] bg-[#020617]">
       
       {/* Hero with dynamic variant and geometric shapes */}
       <HeroSection 
         title={data.title} 
-        description={data.description} 
+        description={data.description}
+        intro={data.intro} 
         variant={data.heroVariant} 
       />
 
       <div className="max-w-7xl mx-auto px-6 py-20 space-y-24">
-        
-        {/* Optional Intro sentence if provided */}
-        {data.intro && (
+        {/* ---------- QUOTE ---------- */}
+        {data.quote && (
           <motion.div 
             variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
             className="p-8 rounded-2xl bg-gradient-to-br from-[#e66a1c]/10 to-transparent border border-[#e66a1c]/20"
           >
-            <p className="text-lg text-slate-300 italic text-center">"{data.intro}"</p>
+            <p className="text-lg text-slate-300 italic text-center">"{data.quote}"</p>
           </motion.div>
         )}
 

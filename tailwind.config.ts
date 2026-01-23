@@ -31,6 +31,10 @@ export default {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px) scale(1.05)' },
         },
+        spinSlow: {
+          from: { transform: `rotate(0deg)` },
+          to: { transform: `rotate(360deg)` }
+        }
       },
     },
   },

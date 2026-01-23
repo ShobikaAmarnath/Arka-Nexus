@@ -3,15 +3,18 @@ import InstrumentsHero from "../sections/InstrumentsHero";
 import InstrumentsGrid from "../sections/InstrumentsGrid";
 import InstrumentsGallery from "../sections/InstrumentsGallery";
 import "./instruments.css";
+import InstrumentsSkeleton from "../skeleton/instrumentsSkeleton";
+import NotFoundPage from "../../not-found/NotFoundPage";
 
 const InstrumentsPage = () => {
-  const { data, visible, scrollProgress } = useInstrumentsPage();
+  const { data, visible, scrollProgress, loading } = useInstrumentsPage();
 
-  if (!data) return <p className="p-8 text-center text-white">Loading...</p>;
+  if (loading) return <InstrumentsSkeleton />;
+  if (!data) return <NotFoundPage />;
 
   return (
     // Replaced .instruments-page with Tailwind
-    <div className="relative pb-8 text-white">
+    <div className="relative pb-8 text-white bg-[#020617]">
       
       {/* Scroll progress bar - Refactored to Tailwind */}
       <div

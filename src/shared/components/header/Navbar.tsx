@@ -102,23 +102,29 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
             </li>
 
             {/* About Dropdown */}
-            <li className="relative group">
+            <li 
+              className="relative"
+              onMouseEnter={() => setIsAboutDropdownOpen(true)}
+              onMouseLeave={() => setIsAboutDropdownOpen(false)}
+            >
               <Link
                 to="/about"
-                className="flex items-center gap-2 px-4 py-3 text-neutral-textMain text-nav-link group-hover:text-brand-primary transition-all font-medium"
+                className="flex items-center gap-2 px-4 py-3 text-neutral-textMain text-nav-link hover:text-brand-primary transition-all font-medium"
               >
                 About Us
-                <svg className="transition-transform duration-300 group-hover:rotate-180" width="12" height="12" viewBox="0 0 12 12">
+                <svg className="transition-transform duration-300 hover:rotate-180" width="12" height="12" viewBox="0 0 12 12">
                   <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" fill="none" />
                 </svg>
               </Link>
-              <div className="absolute top-full left-0 bg-white rounded-dropdown shadow-dropdown p-2 min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              {isAboutDropdownOpen && (
+                <div className="absolute top-full left-0 bg-white rounded-dropdown shadow-dropdown p-2 min-w-[200px] hover:opacity-100 hover:visible transition-all">
                 {aboutItems.map((item, index) => (
-                  <HashLink key={index} to={item.link} className="block p-3 text-dropdown-link text-neutral-textMain hover:text-brand-primary rounded-md transition-all font-medium">
+                  <HashLink key={index} to={item.link} onClick={() => setIsAboutDropdownOpen(false)} className="block p-3 text-dropdown-link text-neutral-textMain hover:text-brand-primary rounded-md transition-all font-medium">
                     {item.title}
                   </HashLink>
                 ))}
               </div>
+              )}
             </li>
 
             {/* Services Mega Menu */}
@@ -313,7 +319,7 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
                 </HashLink>
               </li>
               <li className="border-b border-neutral-border">
-                <Link to="//snapshots" onClick={() => setIsMobileMenuOpen(false)} className="block py-5 text-mobile-link font-medium text-neutral-textMain text-center hover:text-brand-primary">
+                <Link to="/snapshots" onClick={() => setIsMobileMenuOpen(false)} className="block py-5 text-mobile-link font-medium text-neutral-textMain text-center hover:text-brand-primary">
                   Snap Shots
                 </Link>
               </li>

@@ -10,5 +10,6 @@ export const trainingServiceQuery = (type: string) => `
   needs,
   objectives,
   stages,
+  quote,
 }
 `;

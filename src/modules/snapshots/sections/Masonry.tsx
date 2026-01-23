@@ -1,4 +1,5 @@
-import type { SnapshotImage } from '../hooks/useSnapshots';
+import type { SnapshotImage } from "../hooks/useSnapshots";
+import { MasonryItem } from "./MasonryItem";
 
 interface MasonryProps {
   data: SnapshotImage[];
@@ -17,17 +18,7 @@ function Masonry({ data }: MasonryProps) {
         "
       >
         {data.map((item) => (
-          <div
-            key={item.id}
-            className="mb-4 break-inside-avoid rounded-xl overflow-hidden shadow-xl"
-          >
-            <img
-              src={item.image}
-              alt="Snap Shot"
-              loading="lazy"
-              className="w-full h-auto block object-contain transition-transform duration-500 hover:scale-105"
-            />
-          </div>
+          <MasonryItem image={item.image} />
         ))}
       </div>
     </div>
