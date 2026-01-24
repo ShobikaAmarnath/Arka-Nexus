@@ -1,7 +1,8 @@
 import GridMotion from "../components/GridMotion";
 import AboutSection from "../sections/AboutSection";
 import CoreValuesSection from "../sections/CoreValuesSection";
-import ServiceSection from "../components/ServiceSection";
+import ServiceSection from "../../services/sections/ServiceSection";
+import { servicesLandingContent } from "../../services/content/servicesLanding.content";
 import ClientsSection from "../sections/ClientsSection";
 import ContactSection from "../sections/ContactSection";
 
@@ -11,7 +12,7 @@ export default function HomePage() {
       <GridMotion />
       <AboutSection />
       <CoreValuesSection />
-      <ServiceSection />
+      <ServiceSection services={servicesLandingContent.services}/>
       <ClientsSection />
       <ContactSection />
     </div>

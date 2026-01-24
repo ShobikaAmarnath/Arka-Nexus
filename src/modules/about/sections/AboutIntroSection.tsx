@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
 import Brochure from "@/assets/docs/Brochure.pdf";
+import { getAboutContent } from "../providers/about.provider";
+import NotFoundPage from "../../../shared/not-found/NotFoundPage";
 
 export default function AboutIntroSection() {
+  const [content, setContent] = useState<any>(null);
   const [visibleSections, setVisibleSections] = useState({
     header: false,
     intro: false,
   });
 
   useEffect(() => {
+    getAboutContent().then(setContent);
     setTimeout(() => setVisibleSections(v => ({ ...v, header: true })), 300);
     setTimeout(() => setVisibleSections(v => ({ ...v, intro: true })), 800);
   }, []);
+
+  if (!content) return <NotFoundPage />;
 
   const downloadBrochure = () => {
     const link = document.createElement("a");
@@ -30,7 +36,7 @@ export default function AboutIntroSection() {
         }`}
       >
         <p className="text-xl md:text-h3 text-brand-primary font-bold uppercase text-center mb-4">
-          Innovating Industrial Excellence Since 2025
+          {content.intro.headerTagline}
         </p>
       </div>
 
@@ -40,21 +46,15 @@ export default function AboutIntroSection() {
           visibleSections.intro ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[10px]'
         }`}
       >
-        <div className="bg-blue-900/30 p-6 md:p-8 rounded-lg shadow-xl border border-[#ab6e18]/60 text-justify">
-          <p className="text-neutral-white text-base md:text-lg leading-relaxed mb-4">
-            ARKA Nexus, founded in 2025 by experienced professionals, excels in industrial consultancy, 
-            technology solutions, and professional training. With a strong industry network built since 2010 
-            through research, product/software development, and process optimization, we drive innovation, 
-            efficiency, and sustainable growth across industries.
-          </p>
-          <p className="text-neutral-white text-base md:text-lg leading-relaxed">
-            Our expert consultants provide tailored solutions to optimize performance using cutting-edge 
-            technology and industry insights. We offer advanced training to keep professionals ahead in a 
-            fast-evolving market and drive sustainable growth through innovative solutions aligned with SDGs. 
-            With expertise in IIoT, AI/ML, and R&D, we serve over 100 companies across India, supporting 
-            businesses of all sizes in achieving efficiency and long-term success. Partner with us for smarter, 
-            sustainable industrial growth.
-          </p>
+        <div className="bg-blue-900/30 px-6 pt-6 md:p-8 rounded-lg shadow-xl border border-[#ab6e18]/60 text-justify">
+          {content.intro.paragraphs.map((p: string, i: number) => (
+            <p
+              key={i}
+              className="text-neutral-white text-base md:text-lg leading-relaxed mb-6"
+            >
+              {p}
+            </p>
+          ))}
         </div>
       </div>
 

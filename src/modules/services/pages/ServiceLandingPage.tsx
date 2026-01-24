@@ -3,10 +3,14 @@ import { useNavigate } from "react-router-dom";
 import ImageMapper from "react-img-mapper";
 import { useState, useEffect } from "react";
 
-import ServiceSection from "../../home/components/ServiceSection";
+import ServiceSection from "../sections/ServiceSection";
 import arrow from "@/assets/images/services/arrow.png";
 import img from "@/assets/images/logos/service_img.png";
 import { SERVICES_MAP as MAP } from "../config/services.map";
+
+import { getServicesLandingContent } from "../providers/servicesLanding.provider";
+import type { ServicesLandingContent } from "../content/servicesLanding.content";
+import NotFoundPage from "../../../shared/not-found/NotFoundPage";
 
 const fadeSlide = {
   hidden: { opacity: 0, x: -30 },
@@ -19,10 +23,14 @@ const fadeSlide = {
 
 function ServiceDetails() {
   const navigate = useNavigate();
+  const [content, setContent] = useState<ServicesLandingContent | null>(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [containerWidth, setContainerWidth] = useState(window.innerWidth <= 768 ? window.innerWidth * 0.7 : 320);
 
   useEffect(() => {
+
+    getServicesLandingContent().then(setContent);
+
     const handleResize = () => {
       const mobile = window.innerWidth <= 768;
       setIsMobile(mobile);
@@ -32,6 +40,8 @@ function ServiceDetails() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  if (!content) return <NotFoundPage />;
 
   const handleClick = (area: any) => {
     if (area.href) navigate(area.href);
@@ -61,7 +71,7 @@ function ServiceDetails() {
     <div className="w-full overflow-x-hidden scroll-mt-nav-h">
       {/* First Container: Flex Wrapper */}
       <div className="flex flex-col lg:flex-row items-center justify-center mt-24 lg:mt-nav-h lg:px-safe-x sm:px-0.5 lg:pl-12 w-full gap-5">
-        
+
         {/* Image Section */}
         <div className="flex flex-col items-center max-w-full order-1 lg:order-none">
           <div className="cursor-pointer">
@@ -92,18 +102,18 @@ function ServiceDetails() {
             custom={0.5}
             className="text-3xl md:text-[2.2rem] font-bold mb-3"
           >
-            Industrial Consultancy Services
+            {content.intro.heading}
           </motion.h1>
 
           <p className="text-justify text-neutral-white text-base leading-relaxed mx-auto lg:mx-4 max-w-full">
-            Consultancy is the practice of providing expert advice, guidance, or specialized knowledge to industry or organizations to help them solve problems, improve efficiency, or achieve their goals. Our technical consultants are professionals with expertise in specific fields like Energy Audit, Power Quality Audit, Thermal, Vibration Audit, Solar Panel efficiency, Industrial safety and Quality Audit, who analyze issues, recommend solutions, and assist in implementation.
+            {content.intro.description}
           </p>
 
           {!isMobile && ArrowHint}
         </div>
       </div>
 
-      <ServiceSection />
+      <ServiceSection services={content.services} />
     </div>
   );
 }

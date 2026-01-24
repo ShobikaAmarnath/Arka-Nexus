@@ -1,68 +1,12 @@
 import { motion, easeInOut, type Variants } from 'framer-motion';
 import { Link } from "react-router-dom";
+import type { ServiceCardItem } from '../content/servicesLanding.content';
 
-import img1 from "@/assets/images/services/ea1.jpg";
-import img2 from "@/assets/images/services/pq1-orange.png";
-import img3 from "@/assets/images/services/hs1.png";
-import img4 from "@/assets/images/services/spp1.png";
-import img5 from "@/assets/images/services/taa1.png";
-import img6 from "@/assets/images/services/vs1.jpg";
-import img7 from "@/assets/images/services/isa1.jpg";
-import img8 from "@/assets/images/services/it.webp";
+interface Props {
+    services: ServiceCardItem[];
+}
 
-export default function ServiceSection() {
-
-    const services = [
-        {
-            id: 1,
-            title: "Energy Audit",
-            image: img1,
-            link: '/services/energy-audit'
-        },
-        {
-            id: 2,
-            title: "Power Quality Audit",
-            image: img2,
-            link: '/services/power-quality'
-        },
-        {
-            id: 3,
-            title: "Harmonic Audit",
-            image: img3,
-            link: '/services/harmonic-study'
-        },
-        {
-            id: 4,
-            title: "Solar Plant Audit",
-            image: img4,
-            link: '/services/solar-panel-study'
-        },
-        {
-            id: 5,
-            title: "Thermal Study",
-            image: img5,
-            link: '/services/thermal-study'
-        },
-        {
-            id: 6,
-            title: "Vibration Audit",
-            image: img6,
-            link: '/services/vibration-audit'
-        },
-        {
-            id: 7,
-            title: "Industrial Safety Audit",
-            image: img7,
-            link: '/services/industrial-safety-audit'
-        },
-        {
-            id: 8,
-            title: "Industrial Training Program",
-            image: img8,
-            link: '/services/industrial-training'
-        },
-    ];
-
+export default function ServiceSection({ services }: Props) {
     const cardVariants: Variants = {
         hidden: { opacity: 0, y: 20 },
         visible: (i: number) => ({

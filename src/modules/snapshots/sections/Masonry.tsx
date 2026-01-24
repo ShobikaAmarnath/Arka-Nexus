@@ -18,7 +18,7 @@ function Masonry({ data }: MasonryProps) {
         "
       >
         {data.map((item) => (
-          <MasonryItem image={item.image} />
+          <MasonryItem key={item.id} image={item.image} />
         ))}
       </div>
     </div>

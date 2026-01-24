@@ -1,6 +1,6 @@
 import { useRoutes } from "react-router-dom";
 import { routes } from "./routes";
-import ScrollToTop from "../core/components/ScrollToTop";
+import ScrollToTop from "../core/routing/ScrollToTop";
 
 export default function App() {
   const element = useRoutes(routes);

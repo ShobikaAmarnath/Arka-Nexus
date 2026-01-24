@@ -1,5 +1,5 @@
 import type { RouteObject } from "react-router-dom";
-import NotFoundPage from "../modules/not-found/NotFoundPage";
+import NotFoundPage from "../shared/not-found/NotFoundPage";
 import MainLayout from "../shared/layout/MainLayout";
 import HomePage from "../modules/home/pages/HomePage";
 import AboutPage from "../modules/about/pages/AboutPage";

@@ -4,7 +4,7 @@ import InstrumentsGrid from "../sections/InstrumentsGrid";
 import InstrumentsGallery from "../sections/InstrumentsGallery";
 import "./instruments.css";
 import InstrumentsSkeleton from "../skeleton/instrumentsSkeleton";
-import NotFoundPage from "../../not-found/NotFoundPage";
+import NotFoundPage from "../../../shared/not-found/NotFoundPage";
 
 const InstrumentsPage = () => {
   const { data, visible, scrollProgress, loading } = useInstrumentsPage();

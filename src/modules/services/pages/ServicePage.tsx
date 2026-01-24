@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useServiceData } from "../hooks/useServiceData";
 import AuditServiceTemplate from "../templates/AuditServiceTemplate";
 import TrainingServiceTemplate from "../templates/TrainingServiceTemplate";
-import NotFoundPage from "../../not-found/NotFoundPage";
+import NotFoundPage from "../../../shared/not-found/NotFoundPage";
 import TrainingServiceSkeleton from "../skeleton/TrainingServiceSkeleton";
 import AuditServiceSkeleton from "../skeleton/AuditServiceSkeleton";
 

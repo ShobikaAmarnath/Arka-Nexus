@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Home, AlertTriangle } from "lucide-react";
-import BackgroundDecor from "../../shared/components/background/BackgroundDecor";
+import BackgroundDecor from "../components/background/BackgroundDecor";
 
 const NotFoundPage = () => {
     return (
