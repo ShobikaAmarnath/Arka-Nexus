@@ -22,38 +22,39 @@ const ContactForm = ({ onSuccess }: Props) => {
 
   /* ---------- Label & Input Styles ---------- */
   const labelStyle =
-    "font-semibold text-gray-700 text-[15px] tracking-tight after:content-['*'] after:ml-1 after:text-red-600 after:font-bold";
+    "font-semibold text-gray-700 text-body-sm tracking-tight after:content-['*'] after:ml-1 after:text-red-600 after:font-bold";
 
   const optionalLabelStyle =
-    "font-semibold text-gray-700 text-[15px] tracking-tight";
+    "font-semibold text-gray-700 text-body-sm tracking-tight";
 
   const inputStyle =
-    "px-4 py-2 border-2 border-gray-200 rounded-xl text-[15px] transition-all duration-200 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 hover:border-gray-300 bg-white text-gray-800 leading-relaxed";
+    "px-4 py-2 border-2 border-gray-200 rounded-xl text-body-sm transition-all duration-200 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 hover:border-gray-300 bg-white text-gray-800 leading-relaxed";
 
   return (
     <div className="relative w-full">
-
       {/* Success & Error Toasts */}
       <ContactAlerts showSuccess={showSuccess} showError={showError} />
 
       <form
         onSubmit={handleSubmit}
-        className={`flex flex-col gap-7 w-full transition-opacity duration-300 ${
-          showSuccess ? "opacity-30 pointer-events-none" : "opacity-100"
+        className={`flex w-full flex-col gap-7 transition-opacity duration-300 ${
+          showSuccess ? "pointer-events-none opacity-30" : "opacity-100"
         }`}
       >
         {/* ---------------- Header ---------------- */}
-        <div className="relative overflow-hidden p-6 rounded-xl text-center text-brand-primary mb-2">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full animate-[shimmer_3s_infinite] pointer-events-none" />
-          <h1 className="relative z-10 text-h3 md:text-3xl font-bold tracking-tight">
+        <div className="relative mb-2 overflow-hidden rounded-xl p-6 text-center text-brand-primary">
+          <div className="pointer-events-none absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+          <h1 className="relative z-10 text-h3 font-bold tracking-tight">
             Get In Touch With Our Engineering Experts
           </h1>
         </div>
 
         {/* ---------------- Row 1 ---------------- */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="name" className={labelStyle}>Name</label>
+            <label htmlFor="name" className={labelStyle}>
+              Name
+            </label>
             <input
               id="name"
               name="name"
@@ -61,11 +62,15 @@ const ContactForm = ({ onSuccess }: Props) => {
               value={formData.name}
               onChange={handleChange}
             />
-            {errors.name && <p className="text-sm text-red-600">{errors.name}</p>}
+            {errors.name && (
+              <p className="text-sm text-red-600">{errors.name}</p>
+            )}
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="designation" className={labelStyle}>Designation</label>
+            <label htmlFor="designation" className={labelStyle}>
+              Designation
+            </label>
             <input
               id="designation"
               name="designation"
@@ -80,7 +85,7 @@ const ContactForm = ({ onSuccess }: Props) => {
         </div>
 
         {/* ---------------- Row 2 ---------------- */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <div className="flex flex-col gap-1.5">
             <label htmlFor="department" className={optionalLabelStyle}>
               Department
@@ -129,9 +134,11 @@ const ContactForm = ({ onSuccess }: Props) => {
         </div>
 
         {/* ---------------- Email & Mobile ---------------- */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="email" className={labelStyle}>Email</label>
+            <label htmlFor="email" className={labelStyle}>
+              Email
+            </label>
             <input
               id="email"
               name="email"
@@ -139,11 +146,15 @@ const ContactForm = ({ onSuccess }: Props) => {
               value={formData.email}
               onChange={handleChange}
             />
-            {errors.email && <p className="text-sm text-red-600">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-sm text-red-600">{errors.email}</p>
+            )}
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label htmlFor="mobile" className={labelStyle}>Mobile Number</label>
+            <label htmlFor="mobile" className={labelStyle}>
+              Mobile Number
+            </label>
             <input
               id="mobile"
               name="mobile"
@@ -151,13 +162,17 @@ const ContactForm = ({ onSuccess }: Props) => {
               value={formData.mobile}
               onChange={handleChange}
             />
-            {errors.mobile && <p className="text-sm text-red-600">{errors.mobile}</p>}
+            {errors.mobile && (
+              <p className="text-sm text-red-600">{errors.mobile}</p>
+            )}
           </div>
         </div>
 
         {/* ---------------- Services ---------------- */}
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="services" className={labelStyle}>Services</label>
+          <label htmlFor="services" className={labelStyle}>
+            Services
+          </label>
           <select
             id="services"
             name="services"
@@ -197,9 +212,7 @@ const ContactForm = ({ onSuccess }: Props) => {
                 onChange={handleChange}
               />
               {errors.otherServices && (
-                <p className="text-sm text-red-600">
-                  {errors.otherServices}
-                </p>
+                <p className="text-sm text-red-600">{errors.otherServices}</p>
               )}
             </motion.div>
           )}
@@ -223,9 +236,7 @@ const ContactForm = ({ onSuccess }: Props) => {
         <button
           type="submit"
           disabled={isSubmitting || showSuccess || showError}
-          className="mt-3 py-[9px] px-5 rounded-xl font-bold text-lg text-neutral-white
-                     bg-gradient-to-br from-[#f66d14] to-[#ff6900]
-                     hover:shadow-xl hover:-translate-y-1 disabled:opacity-60"
+          className="mt-3 rounded-xl bg-gradient-to-br from-[#f66d14] to-[#ff6900] px-5 py-[9px] text-body-sm font-semibold text-neutral-white hover:-translate-y-1 hover:shadow-xl disabled:opacity-60"
         >
           {isSubmitting ? "Sending..." : "Submit Request"}
         </button>

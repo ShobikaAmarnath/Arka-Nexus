@@ -35,14 +35,14 @@ const ContactModal = ({ onClose }: Props) => {
         {/* Close Button: Replicates the specific hover and border styles from legacy CSS */}
         <button
           onClick={onClose}
-          className="absolute right-6 top-6 z-20 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 font-medium text-slate-500 transition-all hover:border-slate-800 hover:bg-slate-800 hover:text-neutral-white hover:-translate-y-px active:translate-y-0"
+          className="absolute right-6 top-6 z-20 flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 font-medium text-slate-500 transition-all hover:-translate-y-px hover:border-slate-800 hover:bg-slate-800 hover:text-neutral-white active:translate-y-0"
           aria-label="Close Modal"
         >
           <FontAwesomeIcon icon={faTimes} size="lg" />
         </button>
 
         {/* Scrollable Container: Maintains layout for internal padding and scrollbars */}
-        <div className="flex-1 overflow-y-auto p-10 md:p-12 scrollbar-thin scrollbar-track-slate-50 scrollbar-thumb-slate-300 hover:scrollbar-thumb-slate-400">
+        <div className="scrollbar-thin scrollbar-track-slate-50 scrollbar-thumb-slate-300 hover:scrollbar-thumb-slate-400 flex-1 overflow-y-auto p-10 md:p-12">
           <ContactForm onSuccess={onClose} />
         </div>
       </motion.div>

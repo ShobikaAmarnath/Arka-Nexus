@@ -25,82 +25,106 @@ const fadeUp = {
   }),
 };
 
-const HeroSection = ({ title, description, intro, variant }: { title: string, description?: string, intro?: string, variant?: string }) => (
-  <section className="relative min-h-[650px] flex items-center overflow-hidden pt-24 pb-16">
+const HeroSection = ({
+  title,
+  description,
+  intro,
+  variant,
+}: {
+  title: string;
+  description?: string;
+  intro?: string;
+  variant?: string;
+}) => (
+  <section className="relative flex min-h-[650px] items-center overflow-hidden pb-16 pt-24">
     {/* Background Tech Layer with Deep Glows */}
-    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-50"></div>
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#e66a1c]/10 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[120px]" />
+    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-50"></div>
+      <div className="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-[#e66a1c]/10 blur-[100px]" />
+      <div className="absolute bottom-0 right-0 h-[600px] w-[600px] rounded-full bg-blue-900/10 blur-[120px]" />
     </div>
 
-    <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        
-        <div className="lg:col-span-7 space-y-8">
+    <div className="relative z-10 mx-auto w-full max-w-7xl px-6">
+      <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
+        <div className="space-y-8 lg:col-span-7">
           <motion.div
-            variants={fadeUp} initial="hidden" animate="visible" custom={0.1}
-            className="inline-block px-4 py-1 rounded-md bg-[#e66a1c]/10 border border-[#e66a1c]/30"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.1}
+            className="inline-block rounded-md border border-[#e66a1c]/30 bg-[#e66a1c]/10 px-4 py-1"
           >
-            <span className="text-[#e66a1c] text-[10px] font-bold uppercase tracking-[0.2em]">
-                Technical Excellence
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#e66a1c]">
+              Technical Excellence
             </span>
           </motion.div>
-          
-          <motion.h1 
-            variants={fadeUp} initial="hidden" animate="visible" custom={0.2}
-            className="text-3xl md:text-5xl font-black text-brand-primary leading-[1.05]"
+
+          <motion.h1
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.2}
+            className="text-3xl font-black leading-[1.05] text-brand-primary md:text-5xl"
           >
             {title}
           </motion.h1>
 
           {/* Vertical Accent Bar grounding the long description */}
-          <motion.div 
-            variants={fadeUp} initial="hidden" animate="visible" custom={0.4}
-            className="relative pl-8 border-l-2 border-[#e66a1c]/40 group"
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.4}
+            className="group relative border-l-2 border-[#e66a1c]/40 pl-8"
           >
             {/* Interactive Corner Decor */}
-            <div className="absolute -left-[2px] top-0 w-[2px] h-12 bg-[#e66a1c] shadow-[0_0_15px_#e66a1c]" />
-            
-            <p className="text-slate-300 text-h3 md:text-body leading-relaxed text-justify max-w-2xl opacity-90">
+            <div className="absolute -left-[2px] top-0 h-12 w-[2px] bg-[#e66a1c] shadow-[0_0_15px_#e66a1c]" />
+
+            <p className="max-w-2xl text-justify text-h3 leading-relaxed text-slate-300 opacity-90 md:text-body">
               {description}
             </p>
 
-            <p className="text-slate-300 text-h3 md:text-body leading-relaxed text-justify max-w-3xl opacity-90">
+            <p className="max-w-3xl text-justify text-h3 leading-relaxed text-slate-300 opacity-90 md:text-body">
               {intro}
             </p>
           </motion.div>
         </div>
 
         {/* Orbital Visual Side */}
-        <div className="lg:col-span-5 relative flex justify-center items-center h-full pt-12 lg:pt-24">
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }} 
-            animate={{ opacity: 1, x: 0 }} 
+        <div className="relative flex h-full items-center justify-center pt-12 lg:col-span-5 lg:pt-24">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-full max-w-[400px] aspect-square"
+            className="relative aspect-square w-full max-w-[400px]"
           >
             {/* Nested Orbital Tech Rings */}
-            <div className="absolute inset-0 border border-slate-800 rounded-full animate-[spin_30s_linear_infinite]" />
-            <div className="absolute inset-8 border border-dashed border-slate-700/50 rounded-full animate-[spin_20s_linear_infinite_reverse]" />
-            
+            <div className="absolute inset-0 animate-[spin_30s_linear_infinite] rounded-full border border-slate-800" />
+            <div className="absolute inset-8 animate-[spin_20s_linear_infinite_reverse] rounded-full border border-dashed border-slate-700/50" />
+
             {/* The Main Icon Card */}
             <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative p-12 rounded-[2.5rem] bg-gradient-to-br from-white/10 to-transparent backdrop-blur-xl border border-white/10 shadow-2xl">
-                    {/* Pulsing Light behind Icon */}
-                    <div className="absolute inset-0 bg-[#e66a1c]/10 blur-2xl rounded-full animate-pulse" />
-                    
-                    {variant === "shield" ? (
-                      <Shield size={100} className="relative z-10 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" />
-                    ) : (
-                      <GraduationCap size={100} className="relative z-10 text-[#e66a1c] drop-shadow-[0_0_15px_rgba(230,106,28,0.3)]" />
-                    )}
-                </div>
+              <div className="relative rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-white/10 to-transparent p-12 shadow-2xl backdrop-blur-xl">
+                {/* Pulsing Light behind Icon */}
+                <div className="absolute inset-0 animate-pulse rounded-full bg-[#e66a1c]/10 blur-2xl" />
+
+                {variant === "shield" ? (
+                  <Shield
+                    size={100}
+                    className="relative z-10 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                  />
+                ) : (
+                  <GraduationCap
+                    size={100}
+                    className="relative z-10 text-[#e66a1c] drop-shadow-[0_0_15px_rgba(230,106,28,0.3)]"
+                  />
+                )}
+              </div>
             </div>
 
             {/* Tech Node Decorations */}
-            <div className="absolute top-10 right-10 w-2 h-2 bg-[#e66a1c] rounded-full animate-ping" />
-            <div className="absolute bottom-20 left-4 w-1.5 h-1.5 bg-blue-500 rounded-full opacity-50" />
+            <div className="absolute right-10 top-10 h-2 w-2 animate-ping rounded-full bg-[#e66a1c]" />
+            <div className="absolute bottom-20 left-4 h-1.5 w-1.5 rounded-full bg-blue-500 opacity-50" />
           </motion.div>
         </div>
       </div>
@@ -108,33 +132,50 @@ const HeroSection = ({ title, description, intro, variant }: { title: string, de
   </section>
 );
 
-const InfoBlock = ({ title, items, isNumbered = false }: { title: string; items?: string[]; isNumbered?: boolean }) => {
+const InfoBlock = ({
+  title,
+  items,
+  isNumbered = false,
+}: {
+  title: string;
+  items?: string[];
+  isNumbered?: boolean;
+}) => {
   if (!items || items.length === 0) return null;
 
   return (
     <motion.div
-      variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
       className="space-y-8"
     >
       <div className="relative inline-block">
-        <h2 className="text-h3 md:text-3xl font-bold text-[#e66a1c]">{title}</h2>
-        <div className="absolute -bottom-2 left-0 w-1/2 h-1 bg-gradient-to-r from-[#e66a1c] to-transparent rounded-full" />
+        <h2 className="text-h3 font-bold text-[#e66a1c] md:text-3xl">
+          {title}
+        </h2>
+        <div className="absolute -bottom-2 left-0 h-1 w-1/2 rounded-full bg-gradient-to-r from-[#e66a1c] to-transparent" />
       </div>
 
-      <div className={`grid gap-4 ${isNumbered ? 'grid-cols-1 md:grid-cols-3' : 'grid-cols-1 md:grid-cols-2'}`}>
+      <div
+        className={`grid gap-4 ${isNumbered ? "grid-cols-1 md:grid-cols-3" : "grid-cols-1 md:grid-cols-2"}`}
+      >
         {items.map((item, i) => (
-          <div 
-            key={i} 
-            className="flex items-center gap-4 p-4 bg-white/5 border-l-4 border-[#e66a1c] rounded-r-xl hover:bg-white/10 transition-all group"
+          <div
+            key={i}
+            className="group flex items-center gap-4 rounded-r-xl border-l-4 border-[#e66a1c] bg-white/5 p-4 transition-all hover:bg-white/10"
           >
             {isNumbered ? (
-              <span className="shrink-0 w-8 h-8 rounded-full bg-[#e66a1c] text-black flex items-center justify-center font-bold text-sm">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e66a1c] text-sm font-bold text-black">
                 {i + 1}
               </span>
             ) : (
-              <CheckCircle2 className="shrink-0 w-5 h-5 text-[#e66a1c] opacity-70 group-hover:opacity-100 transition-opacity" />
+              <CheckCircle2 className="h-5 w-5 shrink-0 text-[#e66a1c] opacity-70 transition-opacity group-hover:opacity-100" />
             )}
-            <span className="text-slate-100 font-medium text-sm md:text-base leading-snug">{item}</span>
+            <span className="text-sm font-medium leading-snug text-slate-100 md:text-base">
+              {item}
+            </span>
           </div>
         ))}
       </div>
@@ -146,33 +187,34 @@ const InfoBlock = ({ title, items, isNumbered = false }: { title: string; items?
 
 const TrainingServiceTemplate = ({ data }: Props) => {
   return (
-    <div className="min-h-screen text-white selection:bg-[#e66a1c]/30 selection:text-[#e66a1c] bg-[#020617]">
-      
+    <div className="min-h-screen bg-[#020617] text-white selection:bg-[#e66a1c]/30 selection:text-[#e66a1c]">
       {/* Hero with dynamic variant and geometric shapes */}
-      <HeroSection 
-        title={data.title} 
+      <HeroSection
+        title={data.title}
         description={data.description}
-        intro={data.intro} 
-        variant={data.heroVariant} 
+        intro={data.intro}
+        variant={data.heroVariant}
       />
 
-      <div className="max-w-7xl mx-auto px-6 py-20 space-y-24">
+      <div className="mx-auto max-w-7xl space-y-24 px-6 py-20">
         {/* ---------- QUOTE ---------- */}
         {data.quote && (
-          <motion.div 
-            variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="p-8 rounded-2xl bg-gradient-to-br from-[#e66a1c]/10 to-transparent border border-[#e66a1c]/20"
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="rounded-2xl border border-[#e66a1c]/20 bg-gradient-to-br from-[#e66a1c]/10 to-transparent p-8"
           >
-            <p className="text-lg text-slate-300 italic text-center">"{data.quote}"</p>
+            <p className="text-center text-lg italic text-slate-300">
+              "{data.quote}"
+            </p>
           </motion.div>
         )}
 
         {/* ---------- OBJECTIVES ---------- */}
         {data.objectives && data.objectives.length > 0 && (
-          <InfoBlock
-            title="Key Objectives"
-            items={data.objectives}
-          />
+          <InfoBlock title="Key Objectives" items={data.objectives} />
         )}
 
         {/* ---------- NEEDS ---------- */}
@@ -204,7 +246,6 @@ const TrainingServiceTemplate = ({ data }: Props) => {
             isNumbered
           />
         )}
-
       </div>
     </div>
   );

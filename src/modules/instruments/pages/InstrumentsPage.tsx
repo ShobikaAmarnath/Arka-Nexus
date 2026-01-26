@@ -14,11 +14,10 @@ const InstrumentsPage = () => {
 
   return (
     // Replaced .instruments-page with Tailwind
-    <div className="relative pb-8 text-white bg-[#020617]">
-      
+    <div className="relative bg-[#020617] pb-8 text-white">
       {/* Scroll progress bar - Refactored to Tailwind */}
       <div
-        className="fixed top-0 left-0 h-1 z-[60] bg-gradient-to-r from-[#f97316] to-[#eaaf2f] transition-[width] duration-150 ease-linear"
+        className="fixed left-0 top-0 z-[60] h-1 bg-gradient-to-r from-[#f97316] to-[#eaaf2f] transition-[width] duration-150 ease-linear"
         style={{ width: `${scrollProgress}%` }}
       />
 
@@ -35,10 +34,7 @@ const InstrumentsPage = () => {
       />
 
       {data.images?.length > 1 && (
-        <InstrumentsGallery
-          images={data.images}
-          visible={visible.gallery}
-        />
+        <InstrumentsGallery images={data.images} visible={visible.gallery} />
       )}
     </div>
   );

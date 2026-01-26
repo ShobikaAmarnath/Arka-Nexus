@@ -1,6 +1,12 @@
 import React, { useState } from "react";
-import { sendNotificationEmail, sendThankYouEmail } from "../../../../core/services/email/email.service";
-import type { ContactFormData, ContactFormErrors } from "../types/contact.types";
+import {
+  sendNotificationEmail,
+  sendThankYouEmail,
+} from "../../../../core/services/email/email.service";
+import type {
+  ContactFormData,
+  ContactFormErrors,
+} from "../types/contact.types";
 import { validateContactForm } from "../utils/contact.validation";
 
 export const useContactForm = (onSuccess?: () => void) => {
@@ -22,16 +28,20 @@ export const useContactForm = (onSuccess?: () => void) => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => {
-        const updated = { ...prev, [name]: value };
+      const updated = { ...prev, [name]: value };
 
-        // Clear otherServices if services is changed to a non-"Others" value
-        if (name === "services" && value !== "Others") {
-          updated.otherServices = "";
-        }
-        return updated;
+      // Clear otherServices if services is changed to a non-"Others" value
+      if (name === "services" && value !== "Others") {
+        updated.otherServices = "";
+      }
+      return updated;
     });
     setErrors((prev) => ({ ...prev, [name]: undefined }));
   };
@@ -42,13 +52,13 @@ export const useContactForm = (onSuccess?: () => void) => {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length > 0) {
-        const firstErrorField = Object.keys(validationErrors)[0];
-        const element = document.getElementsByName(firstErrorField);
-        if (element && element[0]) {
-          element[0].scrollIntoView({ behavior: "smooth", block: "center" });
-          element[0].focus();
-        }
-        return;
+      const firstErrorField = Object.keys(validationErrors)[0];
+      const element = document.getElementsByName(firstErrorField);
+      if (element && element[0]) {
+        element[0].scrollIntoView({ behavior: "smooth", block: "center" });
+        element[0].focus();
+      }
+      return;
     }
 
     setIsSubmitting(true);

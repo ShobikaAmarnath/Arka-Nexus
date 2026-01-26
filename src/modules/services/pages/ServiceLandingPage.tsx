@@ -25,10 +25,11 @@ function ServiceDetails() {
   const navigate = useNavigate();
   const [content, setContent] = useState<ServicesLandingContent | null>(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [containerWidth, setContainerWidth] = useState(window.innerWidth <= 768 ? window.innerWidth * 0.7 : 320);
+  const [containerWidth, setContainerWidth] = useState(
+    window.innerWidth <= 768 ? window.innerWidth * 0.7 : 320,
+  );
 
   useEffect(() => {
-
     getServicesLandingContent().then(setContent);
 
     const handleResize = () => {
@@ -54,12 +55,12 @@ function ServiceDetails() {
       whileInView="visible"
       viewport={{ once: true }}
       custom={0.8}
-      className="flex items-center animate-[float_3s_ease-in-out_infinite] mt-6 justify-center lg:justify-start"
+      className="mt-6 flex animate-[float_3s_ease-in-out_infinite] items-center justify-center lg:justify-start"
     >
       <img
         src={arrow}
         alt="arrow"
-        className="block ml-0 mr-4 lg:ml-8 lg:mr-3 w-full max-w-[50px] h-auto bg-white/80 rounded-full"
+        className="ml-0 mr-4 block h-auto w-full max-w-[50px] rounded-full bg-white/80 lg:ml-8 lg:mr-3"
       />
       <p className="text-xl font-bold text-white/50">
         Click on the image to explore more...
@@ -68,12 +69,11 @@ function ServiceDetails() {
   );
 
   return (
-    <div className="w-full overflow-x-hidden scroll-mt-nav-h">
+    <div className="w-full scroll-mt-nav-h overflow-x-hidden">
       {/* First Container: Flex Wrapper */}
-      <div className="flex flex-col lg:flex-row items-center justify-center mt-24 lg:mt-nav-h lg:px-safe-x sm:px-0.5 lg:pl-12 w-full gap-5">
-
+      <div className="mt-24 flex w-full flex-col items-center justify-center gap-5 sm:px-0.5 lg:mt-nav-h lg:flex-row lg:px-safe-x lg:pl-12">
         {/* Image Section */}
-        <div className="flex flex-col items-center max-w-full order-1 lg:order-none">
+        <div className="order-1 flex max-w-full flex-col items-center lg:order-none">
           <div className="cursor-pointer">
             <ImageMapper
               src={img}
@@ -93,19 +93,19 @@ function ServiceDetails() {
         </div>
 
         {/* Intro Part */}
-        <div className="flex-1 max-w-[90%] lg:max-w-[60%] p-0 text-center text-[#e66a1c] order-2">
+        <div className="order-2 max-w-[90%] flex-1 p-0 text-center text-[#e66a1c] lg:max-w-[60%]">
           <motion.h1
             variants={fadeSlide}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={0.5}
-            className="text-3xl md:text-[2.2rem] font-bold mb-3"
+            className="mb-3 text-3xl font-bold md:text-[2.2rem]"
           >
             {content.intro.heading}
           </motion.h1>
 
-          <p className="text-justify text-neutral-white text-base leading-relaxed mx-auto lg:mx-4 max-w-full">
+          <p className="mx-auto max-w-full text-justify text-base leading-relaxed text-neutral-white lg:mx-4">
             {content.intro.description}
           </p>
 

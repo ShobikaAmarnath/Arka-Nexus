@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
@@ -11,7 +12,7 @@ html, body {
 .app {
   min-height: 100vh;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 /* Add subtle line animations */
@@ -22,7 +23,7 @@ html, body {
   width: 100%;
   height: 100%;
   background-size: 50px 50px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   animation: gridMove 15s infinite linear;
@@ -44,7 +45,7 @@ html, body {
   width: 100%;
   height: 100%;
   z-index: -1;
- background-color: #00001d;
+  background-color: #00001d;
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
@@ -67,10 +68,22 @@ html, body {
   height: 150%;
   top: -25%;
   left: -25%;
-  background: 
-    radial-gradient(circle at 50% 50%, rgba(9, 9, 30, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 85% 25%, rgba(180, 99, 41, 0.352) 0%, transparent 55%),
-    radial-gradient(circle at 15% 75%, rgba(180, 125, 43, 0.61) 0%, transparent 40%);
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(9, 9, 30, 0.12) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(180, 99, 41, 0.352) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 15% 75%,
+      rgba(180, 125, 43, 0.61) 0%,
+      transparent 40%
+    );
   animation: rotateGlow 25s infinite linear;
 }
 
@@ -91,7 +104,11 @@ html, body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(198, 121, 49, 0.315) 0%, transparent 50%);
+  background: radial-gradient(
+    circle at center,
+    rgba(198, 121, 49, 0.315) 0%,
+    transparent 50%
+  );
   animation: float 15s infinite ease-in-out;
   pointer-events: none;
 }
@@ -106,7 +123,8 @@ html, body {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translateX(0);
   }
   25% {

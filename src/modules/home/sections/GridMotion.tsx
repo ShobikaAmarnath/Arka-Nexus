@@ -47,7 +47,7 @@ export default function GridMotion() {
               duration: 6,
               onComplete: () => {
                 const el = document.querySelector(
-                  ".gridMotion-container"
+                  ".gridMotion-container",
                 ) as HTMLElement | null;
                 if (el) el.style.display = "none";
               },
@@ -58,96 +58,83 @@ export default function GridMotion() {
     });
 
     return () => {
-      autoAnimationsRef.current.forEach(anim => anim?.kill());
+      autoAnimationsRef.current.forEach((anim) => anim?.kill());
     };
   }, [content]);
 
   // Render guard AFTER hooks
   if (!content) return null;
 
-  const {
-    heroTitle,
-    heroTagline,
-    gradientColor,
-    gridItems,
-  } = content.grid;
+  const { heroTitle, heroTagline, gradientColor, gridItems } = content.grid;
 
   const totalItems = 28;
   const defaultItems = Array.from(
     { length: totalItems },
-    (_, i) => `Item ${i + 1}`
+    (_, i) => `Item ${i + 1}`,
   );
 
   const combinedItems =
-    gridItems.length > 0
-      ? gridItems.slice(0, totalItems)
-      : defaultItems;
+    gridItems.length > 0 ? gridItems.slice(0, totalItems) : defaultItems;
 
   return (
     <div
-      className="relative w-full lg:h-[90vh] overflow-hidden flex items-center justify-center"
+      className="relative flex w-full items-center justify-center overflow-hidden lg:h-[90vh]"
       ref={gridRef}
     >
-      <section className="relative w-full h-[30vh] md:h-[60vh] lg:h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative flex h-[30vh] w-full items-center justify-center overflow-hidden md:h-[60vh] lg:h-[90vh]">
         {/* Background Video */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover z-[-1]"
+          className="absolute inset-0 z-[-1] h-full w-full object-cover"
         >
           <source src={bgVideo} type="video/mp4" />
         </video>
 
         {/* Gradient Overlay */}
         <div
-          className="absolute inset-0 w-[500%] h-full z-[1]"
+          className="absolute inset-0 z-[1] h-full w-[500%]"
           style={{
             background: `radial-gradient(circle, ${gradientColor} 0%, rgba(0,0,0,0.7) 100%)`,
           }}
         />
 
         {/* Hero */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[3] w-4/5 max-w-[800px] text-center text-neutral-white">
-          <h1 className="animated-title text-[3rem] md:text-[6rem] lg:text-[8rem] mb-4">
+        <div className="absolute left-1/2 top-1/2 z-[3] w-4/5 max-w-[800px] -translate-x-1/2 -translate-y-1/2 text-center text-neutral-white">
+          <h1 className="animated-title mb-4 text-[3rem] md:text-[6rem] lg:text-[8rem]">
             <span className="word">{heroTitle.split(" ")[0]}</span>
-            <span className="word pl-4 sm:pl-8">
-              {heroTitle.split(" ")[1]}
-            </span>
+            <span className="word pl-4 sm:pl-8">{heroTitle.split(" ")[1]}</span>
           </h1>
-          <h5 className="eiei-text md:text-body text-body-sm lg:text-h3 font-bold tracking-wider">
+          <h5 className="eiei-text text-body-sm font-bold tracking-wider md:text-body lg:text-h3">
             {heroTagline}
           </h5>
         </div>
 
         {/* Grid */}
-        <div className="gridMotion-container relative z-[2] w-[150vw] h-[150vh] grid grid-rows-4 grid-cols-1 gap-4 rotate-[-15deg] origin-center">
+        <div className="gridMotion-container relative z-[2] grid h-[150vh] w-[150vw] origin-center rotate-[-15deg] grid-cols-1 grid-rows-4 gap-4">
           {[...Array(4)].map((_, rowIndex) => (
             <div
               key={rowIndex}
               className="row grid grid-cols-7 gap-4 will-change-transform"
-              ref={el => {
+              ref={(el) => {
                 if (el) rowRefs.current[rowIndex] = el;
               }}
             >
               {[...Array(7)].map((_, itemIndex) => {
-                const item =
-                  combinedItems[rowIndex * 7 + itemIndex];
+                const item = combinedItems[rowIndex * 7 + itemIndex];
 
                 return (
                   <div key={itemIndex} className="relative">
-                    <div className="relative w-full h-full overflow-hidden rounded-[10px] bg-[#111]/60 backdrop-blur-[2px] flex items-center justify-center text-neutral-white text-h3">
-                      {typeof item === "string" &&
-                      item.startsWith("http") ? (
+                    <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[10px] bg-[#111]/60 text-h3 text-neutral-white backdrop-blur-[2px]">
+                      {typeof item === "string" && item.startsWith("http") ? (
                         <div
                           className="absolute inset-0 bg-cover bg-center opacity-70"
                           style={{ backgroundImage: `url(${item})` }}
                         />
                       ) : (
-                        <div className="p-4 text-center z-[1]">
-                          {item}
-                        </div>
+                        <div className="z-[1] p-4 text-center">{item}</div>
                       )}
                     </div>
                   </div>

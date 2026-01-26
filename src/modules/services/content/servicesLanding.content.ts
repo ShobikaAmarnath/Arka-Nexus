@@ -30,13 +30,53 @@ export const servicesLandingContent: ServicesLandingContent = {
   },
 
   services: [
-    { id: 1, title: "Energy Audit", image: img1, link: "/services/energy-audit" },
-    { id: 2, title: "Power Quality Audit", image: img2, link: "/services/power-quality" },
-    { id: 3, title: "Harmonic Audit", image: img3, link: "/services/harmonic-study" },
-    { id: 4, title: "Solar Plant Audit", image: img4, link: "/services/solar-panel-study" },
-    { id: 5, title: "Thermal Study", image: img5, link: "/services/thermal-study" },
-    { id: 6, title: "Vibration Audit", image: img6, link: "/services/vibration-audit" },
-    { id: 7, title: "Industrial Safety Audit", image: img7, link: "/services/industrial-safety-audit" },
-    { id: 8, title: "Industrial Training Program", image: img8, link: "/services/industrial-training" },
+    {
+      id: 1,
+      title: "Energy Audit",
+      image: img1,
+      link: "/services/energy-audit",
+    },
+    {
+      id: 2,
+      title: "Power Quality Audit",
+      image: img2,
+      link: "/services/power-quality",
+    },
+    {
+      id: 3,
+      title: "Harmonic Audit",
+      image: img3,
+      link: "/services/harmonic-study",
+    },
+    {
+      id: 4,
+      title: "Solar Plant Audit",
+      image: img4,
+      link: "/services/solar-panel-study",
+    },
+    {
+      id: 5,
+      title: "Thermal Study",
+      image: img5,
+      link: "/services/thermal-study",
+    },
+    {
+      id: 6,
+      title: "Vibration Audit",
+      image: img6,
+      link: "/services/vibration-audit",
+    },
+    {
+      id: 7,
+      title: "Industrial Safety Audit",
+      image: img7,
+      link: "/services/industrial-safety-audit",
+    },
+    {
+      id: 8,
+      title: "Industrial Training Program",
+      image: img8,
+      link: "/services/industrial-training",
+    },
   ],
 };

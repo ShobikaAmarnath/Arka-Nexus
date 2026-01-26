@@ -8,15 +8,7 @@ interface MasonryProps {
 function Masonry({ data }: MasonryProps) {
   return (
     <div className="w-full px-4">
-      <div
-        className="
-          columns-1
-          sm:columns-2
-          md:columns-3
-          xl:columns-4
-          gap-4
-        "
-      >
+      <div className="columns-1 gap-4 sm:columns-2 md:columns-3 xl:columns-4">
         {data.map((item) => (
           <MasonryItem key={item.id} image={item.image} />
         ))}

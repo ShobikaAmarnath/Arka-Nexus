@@ -49,7 +49,7 @@ export const aboutContent: AboutContent = {
     headerTagline: "Innovating Industrial Excellence Since 2025",
     paragraphs: [
       "ARKA Nexus, founded in 2025 by experienced professionals, excels in industrial consultancy, technology solutions, and professional training. With a strong industry network built since 2010 through research, product/software development, and process optimization, we drive innovation, efficiency, and sustainable growth across industries.",
-      "Our expert consultants provide tailored solutions to optimize performance using cutting-edge technology and industry insights. We offer advanced training to keep professionals ahead in a fast-evolving market and drive sustainable growth through innovative solutions aligned with SDGs. With expertise in IIoT, AI/ML, and R&D, we serve over 100 companies across India, supporting businesses of all sizes in achieving efficiency and long-term success. Partner with us for smarter, sustainable industrial growth."
+      "Our expert consultants provide tailored solutions to optimize performance using cutting-edge technology and industry insights. We offer advanced training to keep professionals ahead in a fast-evolving market and drive sustainable growth through innovative solutions aligned with SDGs. With expertise in IIoT, AI/ML, and R&D, we serve over 100 companies across India, supporting businesses of all sizes in achieving efficiency and long-term success. Partner with us for smarter, sustainable industrial growth.",
     ],
     brochureFileName: "Arka Nexus-brochure.pdf",
   },
@@ -113,8 +113,7 @@ export const aboutContent: AboutContent = {
         title: "Reliable Solutions",
         description:
           "Consistently delivering dependable technological solutions",
-        iconPath:
-          "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
+        iconPath: "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5",
       },
       {
         title: "Optimal Outcomes",
@@ -131,8 +130,7 @@ export const aboutContent: AboutContent = {
       {
         title: "Ethical Practices",
         description: "Upholding high standards of business ethics",
-        iconPath:
-          "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
+        iconPath: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
       },
       {
         title: "Team Coordination",
@@ -143,8 +141,7 @@ export const aboutContent: AboutContent = {
       {
         title: "Advanced Training",
         description: "Cutting-edge educational modules for professionals",
-        iconPath:
-          "M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z",
+        iconPath: "M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z",
       },
     ],
   },

@@ -6,4 +6,4 @@ export const SNAPSHOTS_QUERY = `
             "url": asset->url
         }
         }
-    `;    
+    `;

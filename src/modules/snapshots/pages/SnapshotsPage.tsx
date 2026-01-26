@@ -6,8 +6,8 @@ const SnapshotsPage = () => {
   if (!data) return <p className="p-8 text-white">Loading...</p>;
 
   return (
-    <div className="relative px-2 lg:px-6 mt-24 pb-8">
-      <h1 className="text-h2 font-bold text-brand-primary text-center mb-8">
+    <div className="relative mt-24 px-2 pb-8 lg:px-6">
+      <h1 className="mb-8 text-center text-h2 font-bold text-brand-primary">
         {data.title}
       </h1>
 

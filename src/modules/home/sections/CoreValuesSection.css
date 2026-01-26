@@ -9,59 +9,253 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3), inset 0 -3px 8px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 5px 15px rgba(255, 204, 0, 0.3),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
 
 /* Custom Shape: Gear */
-.gear-shape { background: linear-gradient(135deg, #ffa114, #ff7b31); overflow: hidden; }
-.gear-inner { width: 30px; height: 30px; background: white; border-radius: 50%; position: absolute; z-index: 2; }
-.gear-teeth { position: absolute; width: 15px; height: 15px; background: linear-gradient(135deg, #ffbe33, #ff7b31); z-index: 1; }
-.gear-tooth-1 { top: -7px; border-radius: 3px; }
-.gear-tooth-2 { right: -7px; border-radius: 3px; }
-.gear-tooth-3 { bottom: -7px; border-radius: 3px; }
-.gear-tooth-4 { left: -7px; border-radius: 3px; }
-.gear-tooth-5 { top: -7px; right: -7px; transform: rotate(45deg); border-radius: 3px; }
-.gear-tooth-6 { bottom: -7px; left: -7px; transform: rotate(45deg); border-radius: 3px; }
+.gear-shape {
+  background: linear-gradient(135deg, #ffa114, #ff7b31);
+  overflow: hidden;
+}
+.gear-inner {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+}
+.gear-teeth {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(135deg, #ffbe33, #ff7b31);
+  z-index: 1;
+}
+.gear-tooth-1 {
+  top: -7px;
+  border-radius: 3px;
+}
+.gear-tooth-2 {
+  right: -7px;
+  border-radius: 3px;
+}
+.gear-tooth-3 {
+  bottom: -7px;
+  border-radius: 3px;
+}
+.gear-tooth-4 {
+  left: -7px;
+  border-radius: 3px;
+}
+.gear-tooth-5 {
+  top: -7px;
+  right: -7px;
+  transform: rotate(45deg);
+  border-radius: 3px;
+}
+.gear-tooth-6 {
+  bottom: -7px;
+  left: -7px;
+  transform: rotate(45deg);
+  border-radius: 3px;
+}
 
 /* Custom Shape: Target */
-.target-shape { background: white; overflow: hidden; }
-.target-ring { position: absolute; border-radius: 50%; }
-.target-outer { width: 54px; height: 54px; border: 3px solid #ffcc00; }
-.target-middle { width: 38px; height: 38px; border: 3px solid #ffcc00; }
-.target-inner { width: 22px; height: 22px; background: #ffcc00; }
-.target-arrow { position: absolute; width: 16px; height: 16px; border-radius: 50%; background: #ff3366; top: 8px; z-index: 2; }
+.target-shape {
+  background: white;
+  overflow: hidden;
+}
+.target-ring {
+  position: absolute;
+  border-radius: 50%;
+}
+.target-outer {
+  width: 54px;
+  height: 54px;
+  border: 3px solid #ffcc00;
+}
+.target-middle {
+  width: 38px;
+  height: 38px;
+  border: 3px solid #ffcc00;
+}
+.target-inner {
+  width: 22px;
+  height: 22px;
+  background: #ffcc00;
+}
+.target-arrow {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ff3366;
+  top: 8px;
+  z-index: 2;
+}
 
 /* Custom Shape: Flask */
-.flask-shape { background: white; overflow: hidden; }
-.flask-top { position: absolute; width: 18px; height: 10px; background: #ffcc00; top: 5px; border-radius: 3px; }
-.flask-body { position: absolute; width: 36px; height: 40px; border: 3px solid #ffcc00; border-top: none; top: 15px; border-radius: 0 0 18px 18px; }
-.flask-liquid { position: absolute; width: 30px; height: 20px; background: rgba(255, 204, 0, 0.7); bottom: 5px; border-radius: 0 0 15px 15px; }
-.flask-bubble { position: absolute; background: rgba(255, 255, 255, 0.8); border-radius: 50%; }
-.flask-bubble-1 { width: 8px; height: 8px; bottom: 20px; left: 10px; }
-.flask-bubble-2 { width: 5px; height: 5px; bottom: 15px; right: 12px; }
+.flask-shape {
+  background: white;
+  overflow: hidden;
+}
+.flask-top {
+  position: absolute;
+  width: 18px;
+  height: 10px;
+  background: #ffcc00;
+  top: 5px;
+  border-radius: 3px;
+}
+.flask-body {
+  position: absolute;
+  width: 36px;
+  height: 40px;
+  border: 3px solid #ffcc00;
+  border-top: none;
+  top: 15px;
+  border-radius: 0 0 18px 18px;
+}
+.flask-liquid {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background: rgba(255, 204, 0, 0.7);
+  bottom: 5px;
+  border-radius: 0 0 15px 15px;
+}
+.flask-bubble {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+.flask-bubble-1 {
+  width: 8px;
+  height: 8px;
+  bottom: 20px;
+  left: 10px;
+}
+.flask-bubble-2 {
+  width: 5px;
+  height: 5px;
+  bottom: 15px;
+  right: 12px;
+}
 
 /* Custom Shape: Scale */
-.scale-shape { background: white; overflow: hidden; }
-.scale-top { position: absolute; width: 4px; height: 15px; background: #ffcc00; top: 5px; }
-.scale-bar { position: absolute; width: 40px; height: 4px; background: #ffcc00; top: 20px; }
-.scale-pan { position: absolute; width: 15px; height: 4px; background: #ffcc00; top: 32px; border-radius: 2px; }
-.scale-pan-left { left: 8px; }
-.scale-pan-right { right: 8px; }
+.scale-shape {
+  background: white;
+  overflow: hidden;
+}
+.scale-top {
+  position: absolute;
+  width: 4px;
+  height: 15px;
+  background: #ffcc00;
+  top: 5px;
+}
+.scale-bar {
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background: #ffcc00;
+  top: 20px;
+}
+.scale-pan {
+  position: absolute;
+  width: 15px;
+  height: 4px;
+  background: #ffcc00;
+  top: 32px;
+  border-radius: 2px;
+}
+.scale-pan-left {
+  left: 8px;
+}
+.scale-pan-right {
+  right: 8px;
+}
 
 /* Custom Shape: Team Clock */
-.team-clock-shape { background: white; overflow: hidden; }
-.clock-face { width: 34px; height: 34px; border: 3px solid #ffcc00; border-radius: 50%; position: absolute; top: 5px; }
-.clock-hand { position: absolute; background: #ffcc00; transform-origin: bottom center; }
-.clock-hour { width: 2px; height: 10px; top: 12px; left: 29px; }
-.clock-minute { width: 1px; height: 12px; top: 10px; left: 29.5px; }
-.team-figure { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #ffcc00; bottom: 3px; }
-.team-figure-1 { left: 10px; }
-.team-figure-2 { left: 25px; }
-.team-figure-3 { left: 40px; }
+.team-clock-shape {
+  background: white;
+  overflow: hidden;
+}
+.clock-face {
+  width: 34px;
+  height: 34px;
+  border: 3px solid #ffcc00;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+}
+.clock-hand {
+  position: absolute;
+  background: #ffcc00;
+  transform-origin: bottom center;
+}
+.clock-hour {
+  width: 2px;
+  height: 10px;
+  top: 12px;
+  left: 29px;
+}
+.clock-minute {
+  width: 1px;
+  height: 12px;
+  top: 10px;
+  left: 29.5px;
+}
+.team-figure {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ffcc00;
+  bottom: 3px;
+}
+.team-figure-1 {
+  left: 10px;
+}
+.team-figure-2 {
+  left: 25px;
+}
+.team-figure-3 {
+  left: 40px;
+}
 
 /* Custom Shape: Graduation Cap */
-.cap-shape { background: white; overflow: hidden; }
-.cap-top { position: absolute; width: 36px; height: 36px; background: #ffcc00; transform: rotate(45deg); top: 8px; }
-.cap-tassel { position: absolute; width: 3px; height: 15px; background: #ffcc00; top: 22px; right: 15px; transform-origin: top center; }
-.cap-tassel-end { position: absolute; width: 8px; height: 8px; background: #ffcc00; border-radius: 50%; bottom: -4px; right: -2.5px; }
+.cap-shape {
+  background: white;
+  overflow: hidden;
+}
+.cap-top {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: #ffcc00;
+  transform: rotate(45deg);
+  top: 8px;
+}
+.cap-tassel {
+  position: absolute;
+  width: 3px;
+  height: 15px;
+  background: #ffcc00;
+  top: 22px;
+  right: 15px;
+  transform-origin: top center;
+}
+.cap-tassel-end {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ffcc00;
+  border-radius: 50%;
+  bottom: -4px;
+  right: -2.5px;
+}

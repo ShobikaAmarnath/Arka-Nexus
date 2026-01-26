@@ -5,7 +5,7 @@ type Props = {
 const SkeletonCircle = ({ size = 64 }: Props) => (
   <div
     style={{ width: size, height: size }}
-    className="bg-white/10 rounded-full animate-pulse"
+    className="animate-pulse rounded-full bg-white/10"
   />
 );
 

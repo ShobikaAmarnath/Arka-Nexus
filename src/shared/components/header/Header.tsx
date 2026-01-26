@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
 import Navbar from "./Navbar";
 import ContactModal from "../contact/ContactModal";
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);

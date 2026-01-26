@@ -12,7 +12,7 @@ export default function HomePage() {
       <GridMotion />
       <AboutSection />
       <CoreValuesSection />
-      <ServiceSection services={servicesLandingContent.services}/>
+      <ServiceSection services={servicesLandingContent.services} />
       <ClientsSection />
       <ContactSection />
     </div>

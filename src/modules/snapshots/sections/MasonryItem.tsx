@@ -5,24 +5,15 @@ export function MasonryItem({ image }: { image: string }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="mb-4 break-inside-avoid rounded-xl overflow-hidden shadow-xl relative">
+    <div className="relative mb-4 break-inside-avoid overflow-hidden rounded-xl shadow-xl">
       {!loaded && <MasonrySkeleton />}
 
       <img
         src={image}
         alt="Snap Shot"
-        loading="lazy"               // ✅ network lazy loading
+        loading="lazy" // ✅ network lazy loading
         onLoad={() => setLoaded(true)} // ✅ skeleton removal
-        className={`
-          w-full
-          h-auto
-          block
-          object-contain
-          transition-all
-          duration-500
-          hover:scale-110
-          ${loaded ? "opacity-100" : "opacity-0 absolute inset-0"}
-        `}
+        className={`block h-auto w-full object-contain transition-all duration-500 hover:scale-110 ${loaded ? "opacity-100" : "absolute inset-0 opacity-0"} `}
       />
     </div>
   );

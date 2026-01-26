@@ -1,10 +1,13 @@
-import type { ContactFormData, ContactFormErrors } from "../types/contact.types";
+import type {
+  ContactFormData,
+  ContactFormErrors,
+} from "../types/contact.types";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const phoneRegex = /^[6-9]\d{9}$/;
 
 export const validateContactForm = (
-  data: ContactFormData
+  data: ContactFormData,
 ): ContactFormErrors => {
   const errors: ContactFormErrors = {};
 
@@ -20,8 +23,7 @@ export const validateContactForm = (
   if (!phoneRegex.test(data.mobile))
     errors.mobile = "Enter a valid 10-digit mobile number";
 
-  if (!data.services)
-    errors.services = "Please select a service";
+  if (!data.services) errors.services = "Please select a service";
 
   if (data.services === "Others" && !data.otherServices.trim())
     errors.otherServices = "Please specify other services";

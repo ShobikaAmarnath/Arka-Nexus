@@ -14,15 +14,15 @@ export const SERVICE_MAP = {
     template: "audit",
     sanityType: "harmonicAudit",
   },
-    "solar-panel-study": {
+  "solar-panel-study": {
     template: "audit",
     sanityType: "solarPlantAudit",
-  },    
-    "thermal-study": {
+  },
+  "thermal-study": {
     template: "audit",
     sanityType: "thermalAudit",
   },
-    "vibration-audit": {
+  "vibration-audit": {
     template: "audit",
     sanityType: "vibrationAudit",
   },
@@ -31,7 +31,7 @@ export const SERVICE_MAP = {
     sanityType: "industrialTrainingProgram",
     heroVariant: "training",
   },
-    "industrial-safety-audit": {
+  "industrial-safety-audit": {
     template: "training",
     sanityType: "industrialSafetyAudit",
     heroVariant: "shield",

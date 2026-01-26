@@ -1,42 +1,85 @@
 /* --- Pulse Rings --- */
 .pulse-ring {
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 2px solid rgba(234,175,47,0.08);
-    animation: pulse 2.8s infinite;
-    z-index: 0;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px solid rgba(234, 175, 47, 0.08);
+  animation: pulse 2.8s infinite;
+  z-index: 0;
 }
-.pulse-ring.delayed { animation-delay: 0.7s; }
+.pulse-ring.delayed {
+  animation-delay: 0.7s;
+}
 
 @keyframes pulse {
-    0% { transform: scale(0.85); opacity: 0.9; }
-    70% { transform: scale(1.4); opacity: 0.12; }
-    100% { transform: scale(1.6); opacity: 0; }
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.4);
+    opacity: 0.12;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
 
 /* --- Entry Animations --- */
-.animate-in { animation: heroIn 0.7s ease-out both; }
+.animate-in {
+  animation: heroIn 0.7s ease-out both;
+}
 @keyframes heroIn {
-    from { opacity: 0; transform: translateY(12px) scale(0.995); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-.fade-in { animation: fadeInUp 0.6s ease-out both; }
+.fade-in {
+  animation: fadeInUp 0.6s ease-out both;
+}
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.scale-in { animation: scaleIn 0.6s ease-out both; }
+.scale-in {
+  animation: scaleIn 0.6s ease-out both;
+}
 @keyframes scaleIn {
-    from { opacity: 0; transform: scale(0.96); }
-    to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.slide-up { animation: slideUp 0.6s ease-out both; }
+.slide-up {
+  animation: slideUp 0.6s ease-out both;
+}
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

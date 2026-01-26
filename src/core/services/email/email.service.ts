@@ -18,7 +18,7 @@ export const sendThankYouEmail = async (data: {
       services: data.services,
       from_name: "ARKA NEXUS",
     },
-    emailConfig.publicKey
+    emailConfig.publicKey,
   );
 };
 
@@ -34,11 +34,10 @@ export const sendNotificationEmail = async (data: ContactFormData) => {
       company_address: data.companyAddress,
       customer_email: data.email,
       mobile: data.mobile,
-      services:
-        data.services === "Others" ? data.otherServices : data.services,
+      services: data.services === "Others" ? data.otherServices : data.services,
       additional_message: data.message || "No additional message",
       gmail: "service@arkaxus.com",
     },
-    emailConfig.publicKey
+    emailConfig.publicKey,
   );
 };

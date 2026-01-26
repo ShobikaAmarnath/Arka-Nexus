@@ -46,7 +46,7 @@ export const useInstrumentsPage = () => {
           }));
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.12 },
     );
 
     document
@@ -59,8 +59,7 @@ export const useInstrumentsPage = () => {
   /* ================= SCROLL PROGRESS ================= */
   useEffect(() => {
     const onScroll = () => {
-      const max =
-        document.documentElement.scrollHeight - window.innerHeight;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
       setScrollProgress(max > 0 ? (window.scrollY / max) * 100 : 0);
     };
 

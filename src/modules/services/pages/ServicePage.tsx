@@ -7,20 +7,20 @@ import TrainingServiceSkeleton from "../skeleton/TrainingServiceSkeleton";
 import AuditServiceSkeleton from "../skeleton/AuditServiceSkeleton";
 
 const ServicePage = () => {
-    const { slug } = useParams<{ slug: string }>();
-    const { data, template, loading } = useServiceData(slug!);
+  const { slug } = useParams<{ slug: string }>();
+  const { data, template, loading } = useServiceData(slug!);
 
-    // Render skeletons while loading based on template type
-    if (loading && template === "training") return <TrainingServiceSkeleton />;
-    if (loading && template === "audit") return <AuditServiceSkeleton />;
-    
-    // Render NotFoundPage if no data or template
-    if (!data || !template) return <NotFoundPage />;
+  // Render skeletons while loading based on template type
+  if (loading && template === "training") return <TrainingServiceSkeleton />;
+  if (loading && template === "audit") return <AuditServiceSkeleton />;
 
-    // Render the appropriate template based on the type
-    if (template === "audit") return <AuditServiceTemplate data={data} />;
+  // Render NotFoundPage if no data or template
+  if (!data || !template) return <NotFoundPage />;
 
-    return <TrainingServiceTemplate data={data} />;
+  // Render the appropriate template based on the type
+  if (template === "audit") return <AuditServiceTemplate data={data} />;
+
+  return <TrainingServiceTemplate data={data} />;
 };
 
 export default ServicePage;

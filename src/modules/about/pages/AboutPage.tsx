@@ -5,15 +5,15 @@ import AboutTeamSection from "../sections/AboutTeamsSection";
 
 export default function AboutPage() {
   return (
-    <div className="relative min-h-screen bg-[#00001d] overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden bg-[#00001d]">
       {/* Background Layer - Managed by Legacy CSS */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="pointer-events-none absolute inset-0">
         <div className="fluid-background"></div>
         <div className="overlay-pattern"></div>
       </div>
 
       {/* Main Content Container - Tailwind Centric */}
-      <main className="relative z-10 mx-auto max-w-arka p-6 mt-24 md:px-8 lg:py-8">
+      <main className="relative z-10 mx-auto mt-24 max-w-arka p-6 md:px-8 lg:py-8">
         <div className="flex flex-col gap-10 lg:gap-8">
           <AboutIntroSection />
           <AboutTabsSection />
@@ -22,7 +22,4 @@ export default function AboutPage() {
       </main>
     </div>
   );
-};
-
-
-
+}
