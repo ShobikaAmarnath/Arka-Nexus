@@ -93,16 +93,14 @@ export default function AboutTabsSection() {
           <button
             key={tab.id}
             onClick={() => handleTabClick(tab.id)}
-            className={`flex items-center rounded-lg border px-6 py-3 text-sm transition-all duration-300 md:text-base ${
+            className={`flex items-center rounded-lg border px-6 py-3 text-body-sm transition-all duration-300 ${
               activeTab === tab.id
                 ? "scale-105 border-brand-primary bg-brand-primary font-semibold text-[#031a42] shadow-[0_0_15px_rgba(252,211,77,0.3)]"
                 : "border-[#fca74d]/50 bg-white/70 text-slate-800 hover:bg-brand-primary/80 hover:text-white"
             }`}
           >
             {tab.id === "mission" && <Target className="mr-2" size={20} />}
-            {tab.id === "objectives" && (
-              <ChevronRight className="mr-2" size={20} />
-            )}
+            {tab.id === "objectives" && <ChevronRight className="mr-2" size={20} />}
             {tab.id === "usp" && <Award className="mr-2" size={20} />}
             {tab.id === "values" && <Heart className="mr-2" size={20} />}
             {tab.label}
@@ -135,7 +133,7 @@ export default function AboutTabsSection() {
               <h2 className="mb-section-y border-b border-[#fca74d]/20 pb-2 text-h3 font-bold uppercase text-brand-primary">
                 Vision
               </h2>
-              <p className="text-justify text-base text-neutral-white md:text-lg">
+              <p className="text-justify text-h4 text-neutral-white">
                 {vision.visionText}
               </p>
             </div>
@@ -143,7 +141,7 @@ export default function AboutTabsSection() {
               <h2 className="mb-section-y border-b border-[#fca74d]/20 pb-2 text-h3 font-bold uppercase text-brand-primary">
                 Mission
               </h2>
-              <p className="text-justify text-base text-neutral-white md:text-lg">
+              <p className="text-justify text-h4 text-neutral-white">
                 {vision.missionText}
               </p>
             </div>
@@ -158,9 +156,7 @@ export default function AboutTabsSection() {
                 <div className="mr-4 mt-1 rounded-full bg-brand-primary p-1 text-[#031a42]">
                   <ChevronRight size={16} />
                 </div>
-                <p className="text-base text-neutral-white md:text-lg">
-                  {text}
-                </p>
+                <p className="text-h4 text-neutral-white">{text}</p>
               </li>
             ))}
           </ul>
@@ -180,17 +176,17 @@ export default function AboutTabsSection() {
                     {usp.icon === "users" && <Users size={32} />}
                     {usp.icon === "target" && <Target size={32} />}
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold text-brand-primary">
+                  <h3 className="mb-2 text-h3 font-semibold text-brand-primary">
                     {usp.title}
                   </h3>
-                  <p className="text-sm text-neutral-white md:text-base">
+                  <p className="text-body-sm text-neutral-white">
                     {usp.description}
                   </p>
                 </div>
               ))}
             </div>
             <div className="mt-10 text-center">
-              <p className="years-highlight-legacy inline-block rounded-lg bg-[#bd8409] px-6 py-3 text-lg font-bold text-brand-primary-blue">
+              <p className="years-highlight-legacy inline-block rounded-lg bg-[#bd8409] px-6 py-3 text-h4 font-bold text-brand-primary-blue">
                 <span className="mr-1">14+ years</span> of excellence in
                 industrial consultancy and training
               </p>
@@ -218,10 +214,12 @@ export default function AboutTabsSection() {
                     <path d={val.iconPath} />
                   </svg>
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-brand-primary">
+                <h3 className="mb-2 text-h3 font-semibold text-brand-primary">
                   {val.title}
                 </h3>
-                <p className="text-sm text-neutral-white">{val.description}</p>
+                <p className="text-body-sm text-neutral-white">
+                  {val.description}
+                </p>
               </div>
             ))}
           </div>

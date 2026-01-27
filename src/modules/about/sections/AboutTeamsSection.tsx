@@ -27,17 +27,17 @@ export default function AboutTeamSection() {
         <div className="mx-auto max-w-[1400px] rounded-2xl border border-[#e88011]/20 bg-gradient-to-br from-white/5 to-white/[0.02] p-6 md:p-10">
           {/* Section Header */}
           <div className="mx-auto mb-12 text-center">
-            <h2 className="mb-4 bg-gradient-to-br from-white to-[#e88011] bg-clip-text text-3xl font-bold text-transparent md:text-4xl">
+            <h2 className="mb-4 bg-gradient-to-br from-white to-[#e88011] bg-clip-text text-h3 font-bold text-transparent">
               {team.sectionTitle}
             </h2>
-            <p className="mx-auto max-w-3xl text-base leading-relaxed text-slate-100 md:text-lg">
+            <p className="mx-auto max-w-3xl text-h4 leading-relaxed text-slate-100">
               {introText}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-4">
               {expertiseItems.map((item, idx) => (
                 <div
                   key={idx}
-                  className="group flex items-center gap-2 whitespace-nowrap rounded-full border border-[#e88011]/30 bg-white/5 px-5 py-2.5 text-sm text-slate-100 transition-all duration-300 hover:border-[#e88011]/60 hover:bg-[#e88011]/10 md:text-base"
+                  className="group flex items-center gap-2 whitespace-nowrap rounded-full border border-[#e88011]/30 bg-white/5 px-5 py-2.5 text-body-sm text-slate-100 transition-all duration-300 hover:border-[#e88011]/60 hover:bg-[#e88011]/10"
                 >
                   {/* Glowing Dot Decoration */}
                   <span className="h-2 w-2 rounded-full bg-[#e88011] shadow-[0_0_8px_#e88011] transition-transform group-hover:scale-125" />
@@ -71,16 +71,16 @@ export default function AboutTeamSection() {
 
                   {/* Info */}
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold tracking-tight text-[#1e3a8a] md:text-h3">
+                    <h3 className="text-h3 font-bold tracking-tight text-brand-primary-blue">
                       {member.name}
                     </h3>
-                    <h4 className="text-sm font-semibold uppercase tracking-widest text-[#e88011]">
+                    <h4 className="text-body-sm font-semibold uppercase tracking-widest text-brand-secondary">
                       {member.role}
                     </h4>
                     {/* Description with Toggle */}
                     <div className="pt-4">
                       <p
-                        className={`text-justify text-sm leading-relaxed text-slate-600 transition-all duration-300 ${isExpanded ? "" : "line-clamp-6"}`}
+                        className={`text-justify text-body-sm leading-relaxed text-neutral-textMain transition-all duration-300 ${isExpanded ? "" : "line-clamp-6"}`}
                       >
                         {member.description}
                       </p>
@@ -88,7 +88,7 @@ export default function AboutTeamSection() {
                       {/* Read More / Less Button */}
                       <button
                         onClick={() => toggleReadMore(index)}
-                        className="mt-2 text-xs font-bold uppercase tracking-tighter text-[#e88011] hover:underline focus:outline-none"
+                        className="mt-2 text-body-sm font-light uppercase tracking-tighter text-brand-secondary opacity-70 hover:underline focus:outline-none"
                       >
                         {isExpanded ? "Read Less" : "Read More"}
                       </button>
@@ -106,10 +106,10 @@ export default function AboutTeamSection() {
                 key={i}
                 className="flex w-[calc(50%-1rem)] max-w-[280px] flex-col justify-center space-y-2 text-center md:w-auto md:min-w-[160px]"
               >
-                <div className="bg-gradient-to-br from-[#e88011] to-blue-500 bg-clip-text text-h3 font-extrabold text-transparent drop-shadow-sm md:text-3xl">
+                <div className="bg-gradient-to-br from-[#e88011] to-blue-500 bg-clip-text text-h3 font-extrabold text-transparent drop-shadow-sm">
                   {stat.number}
                 </div>
-                <div className="text-sm font-medium leading-tight tracking-wide text-neutral-white opacity-90 md:text-base">
+                <div className="text-body-sm font-medium leading-tight tracking-wide text-neutral-white opacity-90">
                   {stat.label}
                 </div>
               </div>

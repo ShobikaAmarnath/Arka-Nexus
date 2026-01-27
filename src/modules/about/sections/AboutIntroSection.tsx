@@ -37,7 +37,7 @@ export default function AboutIntroSection() {
               : "translate-y-[10px] opacity-0"
           }`}
         >
-          <p className="mb-4 text-center text-xl font-bold uppercase text-brand-primary md:text-h3">
+          <p className="mb-4 text-center text-h3 font-bold uppercase text-brand-primary">
             {content.intro.headerTagline}
           </p>
         </div>
@@ -54,7 +54,7 @@ export default function AboutIntroSection() {
             {content.intro.paragraphs.map((p: string, i: number) => (
               <p
                 key={i}
-                className="mb-6 text-base leading-relaxed text-neutral-white md:text-lg"
+                className="mb-6 text-h4 leading-relaxed text-neutral-white"
               >
                 {p}
               </p>

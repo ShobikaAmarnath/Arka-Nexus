@@ -9,10 +9,10 @@ const ListBlock = ({ items }: { items: string[] }) => {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ delay: index * 0.1, duration: 0.5 }}
-          className="flex items-start gap-3"
+          className="flex items-center gap-3"
         >
-          <div className="mt-2 h-2 w-2 shrink-0 animate-pulse rounded-full bg-[#f97316]" />
-          <span className="text-left text-base font-medium leading-relaxed text-gray-700">
+          <div className="mt-2 h-2 w-2 shrink-0 animate-pulse rounded-full bg-brand-primary" />
+          <span className="text-left text-body font-medium leading-tight text-gray-700">
             {item}
           </span>
         </motion.div>

@@ -1,13 +1,16 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
 
-  # ✅ Redirect all www requests to non-www (canonical domain)
+  # ✅ Canonical redirect: www → non-www
   RewriteCond %{HTTP_HOST} ^www\.arkaxus\.com$ [NC]
   RewriteRule ^(.*)$ https://arkaxus.com/$1 [L,R=301]
 
-  # ✅ If the request is not for an existing file or folder, serve index.html (React Router support)
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
+  # ✅ Allow direct access to existing files & folders (VERY IMPORTANT)
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # ✅ React SPA fallback (only for routes)
   RewriteRule ^ index.html [L]
 </IfModule>

@@ -17,10 +17,10 @@ export default function InstrumentsHero({
       <div className="relative z-10 mx-auto mt-[100px] grid max-w-[1200px] grid-cols-1 items-center gap-2.5 px-5 md:grid-cols-[2fr_1fr] md:gap-5">
         {/* Hero Text */}
         <div className={`space-y-3 ${visible ? "animate-in" : ""}`}>
-          <h1 className="text-[28px] font-bold leading-[1.05] text-[#e66a1c] md:text-[42px]">
+          <h1 className="text-h1 font-black leading-[1.05] text-brand-primary">
             {title}
           </h1>
-          <p className="max-w-[760px] text-justify text-[15px] leading-relaxed text-white/90 md:text-lg">
+          <p className="max-w-[760px] text-justify text-body leading-relaxed text-neutral-white/90">
             {intro}
           </p>
         </div>

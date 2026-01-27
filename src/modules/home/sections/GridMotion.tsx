@@ -107,13 +107,13 @@ export default function GridMotion() {
             <span className="word">{heroTitle.split(" ")[0]}</span>
             <span className="word pl-4 sm:pl-8">{heroTitle.split(" ")[1]}</span>
           </h1>
-          <h5 className="eiei-text text-body-sm font-bold tracking-wider md:text-body lg:text-h3">
+          <h5 className="eiei-text text-h3 font-bold tracking-wider">
             {heroTagline}
           </h5>
         </div>
 
         {/* Grid */}
-        <div className="gridMotion-container relative z-[2] grid h-[150vh] w-[150vw] origin-center rotate-[-15deg] grid-cols-1 grid-rows-4 gap-4">
+        <div className="gridMotion-container relative z-[2] grid h-[150vh] w-[250vw] origin-center rotate-[-15deg] grid-cols-1 grid-rows-4 gap-4">
           {[...Array(4)].map((_, rowIndex) => (
             <div
               key={rowIndex}

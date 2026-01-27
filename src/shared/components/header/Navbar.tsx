@@ -122,7 +122,7 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
             src={arka_logo}
             alt="Arka Nexus Logo"
             whileHover={{ scale: 1.02 }}
-            className={`transition-all duration-300 ${isScrolled ? "h-[55px]" : "h-[65px]"}`}
+            className={`transition-all duration-300 ${ isScrolled ? "h-[45px] sm:h-[50px] md:h-[55px]" : "h-[55px] sm:h-[60px] md:h-[65px]" }`}
           />
         </Link>
 
@@ -284,7 +284,7 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
             onClick={handleContactClick}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="rounded-button bg-gradient-to-br from-brand-primary to-brand-secondary px-7 py-3 text-sm font-semibold text-neutral-white shadow-button"
+            className="rounded-button bg-gradient-to-br from-brand-primary to-brand-secondary px-7 py-3 text-body-sm font-semibold text-neutral-white shadow-button"
           >
             Contact Us
           </motion.button>
@@ -464,7 +464,7 @@ function Navbar({ onContactClick }: { onContactClick: () => void }) {
               {/* 5. Contact Us Button */}
               <li className="mt-8">
                 <button
-                  className="w-full rounded-button bg-gradient-to-br from-brand-primary to-brand-secondary py-4 text-lg font-semibold text-neutral-white shadow-button transition-all hover:opacity-90 active:scale-95"
+                  className="w-full rounded-button bg-gradient-to-br from-brand-primary to-brand-secondary py-4 text-body font-semibold text-neutral-white shadow-button transition-all hover:opacity-90 active:scale-95"
                   onClick={handleContactClick}
                 >
                   Contact Us

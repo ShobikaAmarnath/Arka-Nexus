@@ -35,12 +35,27 @@ export const tokens = {
     "stack-gap": "1rem", // Small stack gap for headers/text
   },
   fontSize: {
-    h1: ["2.1rem", { lineHeight: "1.2", fontWeight: "800" }], // Mobile: 40px
-    h2: ["2rem", { lineHeight: "1.3", fontWeight: "700" }], // Mobile: 32px
-    h3: ["1.5rem", { lineHeight: "1.4", fontWeight: "600" }],
-    h4: ["1.25rem", { lineHeight: "1.5", fontWeight: "600" }],
-    body: ["1.2rem", { lineHeight: "1.6" }],
-    "body-sm": ["1rem", { lineHeight: "1.5" }],
+    h1: [
+      "clamp(1.5rem, 1rem + 2vw, 2.25rem)",
+      { lineHeight: "1.2", fontWeight: "700" },
+    ],
+    h2: [
+      "clamp(1.5rem, 1rem + 2vw, 2rem)",
+      { lineHeight: "1.3", fontWeight: "700" },
+    ], // scales 24px → 32px
+    h3: [
+      "clamp(1.125rem, 0.875rem + 1.5vw, 1.5rem)",
+      { lineHeight: "1.4", fontWeight: "600" },
+    ], // scales 18px → 24px
+    h4: [
+      "clamp(1rem, 0.75rem + 1vw, 1.25rem)",
+      { lineHeight: "1.5", fontWeight: "600" },
+    ], // scales 16px → 20px
+    body: ["clamp(1rem, 0.875rem + 0.5vw, 1.2rem)", { lineHeight: "1.6" }], // scales 16px → 19px
+    "body-sm": [
+      "clamp(0.875rem, 0.75rem + 0.5vw, 1rem)",
+      { lineHeight: "1.5" },
+    ], // scales 14px → 16px
     "nav-link": "1.1rem",
     "dropdown-link": "0.875rem",
     "mobile-link": "1.1rem",

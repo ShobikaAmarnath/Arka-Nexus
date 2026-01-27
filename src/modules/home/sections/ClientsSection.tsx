@@ -24,7 +24,7 @@ export default function ClientsSection() {
   return (
     <section
       id="clients"
-      className="clients-section-animated relative scroll-mt-nav-h-scroll overflow-hidden py-12 md:py-16"
+      className="clients-section-animated relative scroll-mt-nav-h-scroll overflow-hidden py-section-y"
     >
       {/* Paint spray texture overlay (Legacy CSS) */}
       <div className="legacy-texture-overlay" />
@@ -55,7 +55,7 @@ export default function ClientsSection() {
 
         {/* Section Title */}
         <motion.h2
-          className="client-title-underline relative mb-2 text-center text-body font-bold leading-tight text-brand-dark"
+          className="client-title-underline relative mb-2 text-center text-h4 font-bold leading-tight text-brand-dark"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -65,7 +65,7 @@ export default function ClientsSection() {
 
         {/* Logo Marquee - Top Row */}
         {clientLogos?.topRowLogos?.length > 0 && (
-          <div className="mb-section-y py-4">
+          <div className="py-4">
             <Marquee direction="left" speed={40} gradient={false}>
               {clientLogos.topRowLogos.map((logo, index) => (
                 <div

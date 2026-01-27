@@ -63,7 +63,7 @@ const ContactForm = ({ onSuccess }: Props) => {
               onChange={handleChange}
             />
             {errors.name && (
-              <p className="text-sm text-red-600">{errors.name}</p>
+              <p className="text-body-sm text-red-600">{errors.name}</p>
             )}
           </div>
 
@@ -79,7 +79,7 @@ const ContactForm = ({ onSuccess }: Props) => {
               onChange={handleChange}
             />
             {errors.designation && (
-              <p className="text-sm text-red-600">{errors.designation}</p>
+              <p className="text-body-sm text-red-600">{errors.designation}</p>
             )}
           </div>
         </div>
@@ -111,7 +111,7 @@ const ContactForm = ({ onSuccess }: Props) => {
               onChange={handleChange}
             />
             {errors.companyName && (
-              <p className="text-sm text-red-600">{errors.companyName}</p>
+              <p className="text-body-sm text-red-600">{errors.companyName}</p>
             )}
           </div>
         </div>
@@ -129,7 +129,7 @@ const ContactForm = ({ onSuccess }: Props) => {
             onChange={handleChange}
           />
           {errors.companyAddress && (
-            <p className="text-sm text-red-600">{errors.companyAddress}</p>
+            <p className="text-body-sm text-red-600">{errors.companyAddress}</p>
           )}
         </div>
 
@@ -147,7 +147,7 @@ const ContactForm = ({ onSuccess }: Props) => {
               onChange={handleChange}
             />
             {errors.email && (
-              <p className="text-sm text-red-600">{errors.email}</p>
+              <p className="text-body-sm text-red-600">{errors.email}</p>
             )}
           </div>
 
@@ -163,7 +163,7 @@ const ContactForm = ({ onSuccess }: Props) => {
               onChange={handleChange}
             />
             {errors.mobile && (
-              <p className="text-sm text-red-600">{errors.mobile}</p>
+              <p className="text-body-sm text-red-600">{errors.mobile}</p>
             )}
           </div>
         </div>
@@ -188,7 +188,7 @@ const ContactForm = ({ onSuccess }: Props) => {
             ))}
           </select>
           {errors.services && (
-            <p className="text-sm text-red-600">{errors.services}</p>
+            <p className="text-body-sm text-red-600">{errors.services}</p>
           )}
         </div>
 
@@ -212,7 +212,9 @@ const ContactForm = ({ onSuccess }: Props) => {
                 onChange={handleChange}
               />
               {errors.otherServices && (
-                <p className="text-sm text-red-600">{errors.otherServices}</p>
+                <p className="text-body-sm text-red-600">
+                  {errors.otherServices}
+                </p>
               )}
             </motion.div>
           )}

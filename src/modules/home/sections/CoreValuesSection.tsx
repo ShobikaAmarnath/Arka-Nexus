@@ -21,7 +21,7 @@ export default function CoreValuesSection() {
         transition={{ duration: 1 }}
       >
         <h2 className="text-h2 text-brand-secondary">Our Core Values</h2>
-        <p className="mb-8 text-body text-neutral-white">
+        <p className="mb-8 text-h4 text-neutral-white">
           The principles that drive our success
         </p>
         <div className="mb-8 flex items-center justify-center gap-4">
@@ -291,7 +291,7 @@ export default function CoreValuesSection() {
                 transition: { duration: 0.3 },
               }}
             >
-              <h3 className="mb-4 flex min-h-0 items-center justify-center text-body-sm font-bold text-brand-dark md:min-h-[40px]">
+              <h3 className="mb-4 flex min-h-0 items-center justify-center text-body font-bold leading-tight text-brand-dark md:min-h-[40px]">
                 {item.title}
               </h3>
               <div className="mx-auto my-3 h-[3px] w-10 rounded-card bg-brand-primary"></div>

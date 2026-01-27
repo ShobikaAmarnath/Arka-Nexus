@@ -7,7 +7,7 @@ const SnapshotsPage = () => {
 
   return (
     <div className="relative mt-24 px-2 pb-8 lg:px-6">
-      <h1 className="mb-8 text-center text-h2 font-bold text-brand-primary">
+      <h1 className="mb-8 text-center text-h1 font-black text-brand-primary">
         {data.title}
       </h1>
 

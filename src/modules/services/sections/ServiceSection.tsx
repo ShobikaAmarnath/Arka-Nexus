@@ -25,7 +25,7 @@ export default function ServiceSection({ services }: Props) {
       {/* Section Header */}
       <div className="mb-section-y text-center">
         <h2 className="text-h2 text-brand-secondary">Our Services</h2>
-        <p className="text-body text-neutral-white">
+        <p className="text-h4 text-neutral-white">
           Where expertise meets execution
         </p>
         <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-brand-secondary" />

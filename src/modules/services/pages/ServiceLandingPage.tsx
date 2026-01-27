@@ -62,7 +62,7 @@ function ServiceDetails() {
         alt="arrow"
         className="ml-0 mr-4 block h-auto w-full max-w-[50px] rounded-full bg-white/80 lg:ml-8 lg:mr-3"
       />
-      <p className="text-xl font-bold text-white/50">
+      <p className="text-body text-white/30">
         Click on the image to explore more...
       </p>
     </motion.div>
@@ -93,19 +93,19 @@ function ServiceDetails() {
         </div>
 
         {/* Intro Part */}
-        <div className="order-2 max-w-[90%] flex-1 p-0 text-center text-[#e66a1c] lg:max-w-[60%]">
+        <div className="order-2 max-w-[90%] flex-1 p-0 text-center text-brand-primary lg:max-w-[60%]">
           <motion.h1
             variants={fadeSlide}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             custom={0.5}
-            className="mb-3 text-3xl font-bold md:text-[2.2rem]"
+            className="my-3 text-h1 font-black leading-[1.05]"
           >
             {content.intro.heading}
           </motion.h1>
 
-          <p className="mx-auto max-w-full text-justify text-base leading-relaxed text-neutral-white lg:mx-4">
+          <p className="mx-auto max-w-full text-justify text-body leading-relaxed text-neutral-white lg:mx-4">
             {content.intro.description}
           </p>
 

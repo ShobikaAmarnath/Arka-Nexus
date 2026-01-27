@@ -104,16 +104,16 @@ export default function AboutSection() {
         </div>
 
         {/* Main content container with text and video */}
-        <div className="mx-auto my-section-y mb-8 grid max-w-arka grid-cols-1 items-center gap-8 sm:px-0.5 md:grid-cols-[1fr_1fr] lg:grid-cols-[2fr_1.5fr] lg:gap-1 lg:px-safe-x">
+        <div className="mx-auto my-section-y mb-8 grid max-w-arka grid-cols-1 items-center gap-8 sm:px-0.5 lg:grid-cols-[2fr_1.5fr] lg:gap-1 lg:px-safe-x">
           {/* Left Text Content */}
-          <div className="space-y-4 text-justify font-semibold">
+          <div className="space-y-4 text-justify font-semibold text-neutral-white text-h4 leading-relaxed">
             {content.about.paragraphs.map((para, idx) => (
               <motion.p
                 key={idx}
                 className={
                   para.variant === "highlight"
-                    ? "border-l-4 border-brand-secondary pl-[15px] text-h4 font-medium leading-relaxed text-neutral-white"
-                    : "text-justify text-body leading-relaxed text-neutral-white"
+                    ? "border-l-4 border-brand-secondary pl-[15px] font-medium leading-relaxed text-neutral-white"
+                    : ""
                 }
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -136,7 +136,7 @@ export default function AboutSection() {
           {/* Right Video */}
           <div className="relative flex items-center justify-center lg:justify-end">
             <motion.div
-              className="group relative w-4/5"
+              className="group relative w-full md:w-3/4 lg:w-4/5"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.03 }}
@@ -172,7 +172,7 @@ export default function AboutSection() {
                 </div>
                 <h3 className="text-h3 text-brand-dark">Our Vision</h3>
               </div>
-              <p className="text-justify text-body-sm leading-relaxed text-slate-500 md:text-left">
+              <p className="text-justify text-body leading-relaxed text-slate-500 md:text-left">
                 {content.about.vision}
               </p>
               <div className="absolute left-1/2 top-0 h-1 w-10 -translate-x-1/2 rounded-b-lg bg-gradient-to-r from-blue-500 to-purple-500 md:w-[60px]" />
@@ -186,7 +186,7 @@ export default function AboutSection() {
                 <MissionIcon isVisible={isVisible} />
                 <h3 className="text-h3 text-brand-dark">Our Mission</h3>
               </div>
-              <p className="text-justify text-body-sm leading-relaxed text-slate-500 md:text-left">
+              <p className="text-justify text-body leading-relaxed text-slate-500 md:text-left">
                 {content.about.mission}
               </p>
               <div className="absolute left-1/2 top-0 h-1 w-10 -translate-x-1/2 rounded-b-lg bg-gradient-to-r from-purple-500 to-pink-500 md:w-[60px]" />

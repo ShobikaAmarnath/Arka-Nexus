@@ -12,7 +12,7 @@ export default function InstrumentsGallery({
     <section className="py-section-y" data-animate id="gallery">
       <div className="mx-auto max-w-[1100px]">
         <h2
-          className={`mb-10 text-center text-[28px] font-bold text-[#f7c07a] ${visible ? "slide-up" : ""}`}
+          className={`mb-10 text-center text-h2 font-bold text-brand-primary ${visible ? "slide-up" : ""}`}
         >
           Gallery
         </h2>

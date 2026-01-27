@@ -40,7 +40,7 @@ const AuditServiceTemplate = ({ data }: Props) => {
                   initial="hidden"
                   animate="visible"
                   custom={0.2}
-                  className="text-4xl font-bold leading-[1.1] text-[#e66a1c] lg:text-5xl"
+                  className="text-h1 font-black leading-[1.05] text-brand-primary"
                 >
                   {data.title}
                 </motion.h1>
@@ -50,7 +50,7 @@ const AuditServiceTemplate = ({ data }: Props) => {
                   initial="hidden"
                   animate="visible"
                   custom={0.4}
-                  className="text-justify text-base leading-relaxed text-white"
+                  className="text-justify text-body leading-relaxed text-white"
                 >
                   {data.description}
                 </motion.p>
@@ -111,7 +111,7 @@ const AuditServiceTemplate = ({ data }: Props) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="mb-10 text-center text-h2 font-bold text-[#e66a1c]"
+            className="mb-10 text-center text-h2 font-bold text-brand-primary"
           >
             Our Stages in {data.title} :
           </motion.h3>
@@ -135,7 +135,7 @@ const AuditServiceTemplate = ({ data }: Props) => {
               className="flex flex-col gap-8"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#e66a1c]">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-primary">
                   <svg
                     className="h-4 w-4 text-black"
                     fill="currentColor"
@@ -148,7 +148,7 @@ const AuditServiceTemplate = ({ data }: Props) => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-h3 font-bold text-[#e66a1c]">
+                <h3 className="text-h3 font-bold text-brand-primary">
                   Key Steps Involved
                 </h3>
               </div>
@@ -166,7 +166,7 @@ const AuditServiceTemplate = ({ data }: Props) => {
               className="flex flex-col gap-8"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#e66a1c]">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-primary">
                   <svg
                     className="h-4 w-4 text-black"
                     fill="currentColor"
@@ -179,7 +179,7 @@ const AuditServiceTemplate = ({ data }: Props) => {
                     />
                   </svg>
                 </div>
-                <h3 className="text-h3 font-bold text-[#e66a1c]">
+                <h3 className="text-h3 font-bold text-brand-primary">
                   Benefits of {data.title}
                 </h3>
               </div>
@@ -193,7 +193,7 @@ const AuditServiceTemplate = ({ data }: Props) => {
           <div className="mt-16 flex items-center justify-center gap-2">
             {(data.keySteps || []).map((_, index) => (
               <div key={index} className="flex items-center">
-                <div className="h-3 w-3 rounded-full bg-[#de801c] shadow-sm" />
+                <div className="h-3 w-3 rounded-full bg-brand-primary shadow-sm" />
                 {index < (data.keySteps?.length || 0) - 1 && (
                   <div className="mx-2 h-[2px] w-8 bg-white opacity-50 lg:w-10" />
                 )}

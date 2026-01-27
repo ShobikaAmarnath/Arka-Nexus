@@ -36,7 +36,7 @@ export default function InstrumentsGrid({
     >
       <div className="w-full">
         {/* Optional Title */}
-        {/* <h2 className={`text-[28px] font-bold text-[#f7c07a] mb-5 ${visible ? 'slide-up' : ''}`}>Instruments Used</h2> */}
+        {/* <h2 className={`text-h2 font-bold text-[#f7c07a] mb-5 ${visible ? 'slide-up' : ''}`}>Instruments Used</h2> */}
 
         <div className="mx-auto grid max-w-[1000px] grid-cols-[repeat(auto-fit,minmax(240px,1fr))] justify-items-center gap-4 md:gap-5">
           {instruments.map((item, idx) => {
@@ -51,7 +51,7 @@ export default function InstrumentsGrid({
                   <Icon size={20} />
                 </div>
                 <div className="text-left">
-                  <h3 className="m-0 text-body-sm leading-tight text-white">
+                  <h3 className="m-0 text-body-sm leading-tight text-neutralwhite">
                     {item}
                   </h3>
                 </div>

@@ -46,18 +46,18 @@ const AuditSteps = ({ steps = [], images = [] }: Props) => {
                   onClick={() => setActiveIndex(index)}
                   className={`relative cursor-pointer rounded-lg border-l-[3px] p-3 transition-all duration-500 ${
                     isActive
-                      ? "translate-x-2 border-[#e66a1c] bg-[#e66a1c]/10"
+                      ? "translate-x-2 border-brand-primary bg-brand-primary/10"
                       : "border-white/10 bg-transparent opacity-50 hover:opacity-100"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <span
-                      className={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-card text-sm font-bold ${isActive ? "bg-[#e66a1c] text-black" : "bg-white/10 text-white"}`}
+                      className={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-card text-body-sm font-bold ${isActive ? "bg-brand-primary text-black" : "bg-white/10 text-white"}`}
                     >
                       {index + 1}
                     </span>
                     <span
-                      className={`text-sm font-medium tracking-wide md:text-base ${isActive ? "text-[#e66a1c]" : "text-white"}`}
+                      className={`text-body-sm font-medium tracking-wide ${isActive ? "text-brand-primary" : "text-neutral-white"}`}
                     >
                       {step}
                     </span>
@@ -71,7 +71,7 @@ const AuditSteps = ({ steps = [], images = [] }: Props) => {
         {/* ================= IMAGE CAROUSEL ================= */}
         {hasImages && (
           <div className="flex w-full justify-center lg:w-7/12">
-            <div className="relative aspect-[4/3] w-full max-w-[420px] overflow-hidden rounded-card border border-white/10 bg-[#00001d] shadow-card">
+            <div className="relative aspect-[4/3] w-full max-w-[420px] overflow-hidden rounded-card border border-neutral-white/10 bg-[#00001d] shadow-card">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeIndex}
@@ -90,7 +90,7 @@ const AuditSteps = ({ steps = [], images = [] }: Props) => {
                 {images.map((_, i) => (
                   <div
                     key={i}
-                    className={`h-1 rounded-full transition-all duration-500 ${i === activeIndex ? "w-6 bg-[#e66a1c]" : "w-1.5 bg-white/40"}`}
+                    className={`h-1 rounded-full transition-all duration-500 ${i === activeIndex ? "w-6 bg-brand-primary" : "w-1.5 bg-white/40"}`}
                   />
                 ))}
               </div>

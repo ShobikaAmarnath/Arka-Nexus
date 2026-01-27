@@ -4,7 +4,7 @@ import SkeletonCircle from "../../../shared/ui/skeleton/SkeletonCircle";
 
 const TrainingServiceSkeleton = () => {
   return (
-    <div className="min-h-screen bg-[#020617] px-6 pt-24 text-white selection:bg-[#e66a1c]/30">
+    <div className="min-h-screen bg-[#020617] px-6 pt-24 text-white selection:bg-brand-primary/30">
       {/* ================= HERO ================= */}
       <section className="relative flex min-h-[650px] items-center pb-16">
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-8 lg:grid-cols-12">

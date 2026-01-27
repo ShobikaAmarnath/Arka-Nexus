@@ -40,7 +40,7 @@ const HeroSection = ({
     {/* Background Tech Layer with Deep Glows */}
     <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-50"></div>
-      <div className="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-[#e66a1c]/10 blur-[100px]" />
+      <div className="absolute -left-24 -top-24 h-96 w-96 rounded-full bg-brand-primary/10 blur-[100px]" />
       <div className="absolute bottom-0 right-0 h-[600px] w-[600px] rounded-full bg-blue-900/10 blur-[120px]" />
     </div>
 
@@ -52,9 +52,9 @@ const HeroSection = ({
             initial="hidden"
             animate="visible"
             custom={0.1}
-            className="inline-block rounded-md border border-[#e66a1c]/30 bg-[#e66a1c]/10 px-4 py-1"
+            className="inline-block rounded-md border border-brand-primary/30 bg-brand-primary/10 px-4 py-1"
           >
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#e66a1c]">
+            <span className="text-body-sm font-bold uppercase tracking-[0.2em] text-brand-primary">
               Technical Excellence
             </span>
           </motion.div>
@@ -64,7 +64,7 @@ const HeroSection = ({
             initial="hidden"
             animate="visible"
             custom={0.2}
-            className="text-3xl font-black leading-[1.05] text-brand-primary md:text-5xl"
+            className="text-h1 font-black leading-[1.05] text-brand-primary"
           >
             {title}
           </motion.h1>
@@ -75,16 +75,16 @@ const HeroSection = ({
             initial="hidden"
             animate="visible"
             custom={0.4}
-            className="group relative border-l-2 border-[#e66a1c]/40 pl-8"
+            className="group relative border-l-2 border-brand-primary/40 pl-8"
           >
             {/* Interactive Corner Decor */}
-            <div className="absolute -left-[2px] top-0 h-12 w-[2px] bg-[#e66a1c] shadow-[0_0_15px_#e66a1c]" />
+            <div className="absolute -left-[2px] top-0 h-12 w-[2px] bg-brand-primary shadow-[0_0_15px_brand-primary]" />
 
-            <p className="max-w-2xl text-justify text-h3 leading-relaxed text-slate-300 opacity-90 md:text-body">
+            <p className="max-w-2xl text-justify text-body leading-relaxed text-neutral-white opacity-90">
               {description}
             </p>
 
-            <p className="max-w-3xl text-justify text-h3 leading-relaxed text-slate-300 opacity-90 md:text-body">
+            <p className="max-w-3xl text-justify text-body leading-relaxed text-neutral-white opacity-90">
               {intro}
             </p>
           </motion.div>
@@ -106,7 +106,7 @@ const HeroSection = ({
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="relative rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-white/10 to-transparent p-12 shadow-2xl backdrop-blur-xl">
                 {/* Pulsing Light behind Icon */}
-                <div className="absolute inset-0 animate-pulse rounded-full bg-[#e66a1c]/10 blur-2xl" />
+                <div className="absolute inset-0 animate-pulse rounded-full bg-brand-primary/10 blur-2xl" />
 
                 {variant === "shield" ? (
                   <Shield
@@ -116,14 +116,14 @@ const HeroSection = ({
                 ) : (
                   <GraduationCap
                     size={100}
-                    className="relative z-10 text-[#e66a1c] drop-shadow-[0_0_15px_rgba(230,106,28,0.3)]"
+                    className="relative z-10 text-brand-primary drop-shadow-[0_0_15px_rgba(230,106,28,0.3)]"
                   />
                 )}
               </div>
             </div>
 
             {/* Tech Node Decorations */}
-            <div className="absolute right-10 top-10 h-2 w-2 animate-ping rounded-full bg-[#e66a1c]" />
+            <div className="absolute right-10 top-10 h-2 w-2 animate-ping rounded-full bg-brand-primary" />
             <div className="absolute bottom-20 left-4 h-1.5 w-1.5 rounded-full bg-blue-500 opacity-50" />
           </motion.div>
         </div>
@@ -152,10 +152,8 @@ const InfoBlock = ({
       className="space-y-8"
     >
       <div className="relative inline-block">
-        <h2 className="text-h3 font-bold text-[#e66a1c] md:text-3xl">
-          {title}
-        </h2>
-        <div className="absolute -bottom-2 left-0 h-1 w-1/2 rounded-full bg-gradient-to-r from-[#e66a1c] to-transparent" />
+        <h2 className="text-h3 font-bold text-brand-primary">{title}</h2>
+        <div className="absolute -bottom-2 left-0 h-1 w-1/2 rounded-full bg-gradient-to-r from-brand-primary to-transparent" />
       </div>
 
       <div
@@ -164,16 +162,16 @@ const InfoBlock = ({
         {items.map((item, i) => (
           <div
             key={i}
-            className="group flex items-center gap-4 rounded-r-xl border-l-4 border-[#e66a1c] bg-white/5 p-4 transition-all hover:bg-white/10"
+            className="group flex items-center gap-4 rounded-r-xl border-l-4 border-brand-primary bg-white/5 p-4 transition-all hover:bg-white/10"
           >
             {isNumbered ? (
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e66a1c] text-sm font-bold text-black">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-primary text-body-sm font-bold text-black">
                 {i + 1}
               </span>
             ) : (
-              <CheckCircle2 className="h-5 w-5 shrink-0 text-[#e66a1c] opacity-70 transition-opacity group-hover:opacity-100" />
+              <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-primary opacity-70 transition-opacity group-hover:opacity-100" />
             )}
-            <span className="text-sm font-medium leading-snug text-slate-100 md:text-base">
+            <span className="text-body-sm font-medium leading-snug text-slate-100">
               {item}
             </span>
           </div>
@@ -187,7 +185,7 @@ const InfoBlock = ({
 
 const TrainingServiceTemplate = ({ data }: Props) => {
   return (
-    <div className="min-h-screen bg-[#020617] text-white selection:bg-[#e66a1c]/30 selection:text-[#e66a1c]">
+    <div className="min-h-screen bg-[#020617] text-neutral-white">
       {/* Hero with dynamic variant and geometric shapes */}
       <HeroSection
         title={data.title}
@@ -204,9 +202,9 @@ const TrainingServiceTemplate = ({ data }: Props) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="rounded-2xl border border-[#e66a1c]/20 bg-gradient-to-br from-[#e66a1c]/10 to-transparent p-8"
+            className="rounded-2xl border border-brand-primary/20 bg-gradient-to-br from-brand-primary/10 to-transparent p-8"
           >
-            <p className="text-center text-lg italic text-slate-300">
+            <p className="text-center text-h2 italic text-slate-300">
               "{data.quote}"
             </p>
           </motion.div>
